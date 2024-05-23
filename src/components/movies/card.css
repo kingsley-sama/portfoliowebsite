@@ -1,0 +1,91 @@
+.containerised {
+    width: 100vw;
+    
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    
+    border: none;
+    max-height: 100vh;
+  }
+  .norm{
+    min-height: 90vh;
+    width: 100%;
+    display: flex;
+    background-color:rgba(0, 0, 0, 0.6);
+    color: white;
+
+  }
+  .movie_image {
+    width: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    
+  }
+  .movie_image .glass{
+    height: 100%;
+    width: 80%;
+    background-color:rgba(0, 0, 0, 0.1);
+    color: white;
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 15px;
+    padding-left: 20px;
+  }
+  .movie_image .glass .image{
+    height: 100%;
+    margin-left: 10px;
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 70%;
+  }
+  .description_for_movie{
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .movie_description{
+    font-size: 25px;
+    max-width: 50vw;
+    padding: 20px;
+  }
+  .description_for_movie p, .description_for_movie h1, h2{
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    margin: 5px;
+    border-radius: 5px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    background-color: rgba(104, 102, 102, 0.3);
+    font-weight: normal;
+  }
+  .time_stamps{
+    display: flex;
+  }
+  .time_stamps p{
+    padding: 5px;
+  }
+  
+.upvotes{
+  width: inherit;
+  padding: 10px;
+  border-radius: 10px;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+}

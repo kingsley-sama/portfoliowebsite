@@ -1,0 +1,2 @@
+how to set background image dynamicallyxo
+style={{backgroundImage:`url(${dat.img})`}}

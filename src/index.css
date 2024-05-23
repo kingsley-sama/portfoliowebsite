@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
+}
+::-webkit-scrollbar {
+    width: 5px; /* Adjust this value to change the width */
+}
+
+body {
+  font-family: Poppins;
+  height: 100vh;
+  display: grid;
+  width: 100vw;
+  overflow-x: hidden;
+  place-items: center;
+}
