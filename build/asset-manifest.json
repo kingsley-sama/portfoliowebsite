@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1b2cfbd1.css",
+    "main.js": "/static/js/main.06fb954e.js",
+    "static/media/hero_new.jpg": "/static/media/hero_new.ff6f8ccc5d92a03cc77b.jpg",
+    "static/media/hero_one.jpg": "/static/media/hero_one.dc1b8d31e76f1b7ef400.jpg",
+    "static/media/uilaglogo.png": "/static/media/uilaglogo.5b21bcb22476ff0cae7b.png",
+    "static/media/Untitled.png": "/static/media/Untitled.e91450dbb4883831b33d.png",
+    "index.html": "/index.html",
+    "main.1b2cfbd1.css.map": "/static/css/main.1b2cfbd1.css.map",
+    "main.06fb954e.js.map": "/static/js/main.06fb954e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1b2cfbd1.css",
+    "static/js/main.06fb954e.js"
+  ]
+}

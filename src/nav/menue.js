@@ -61,7 +61,7 @@ const Menue_Bar = (props) => {
   };
   const set_style = () => {
     const style = { fontSize: '30px', fontWeight: 'bold', transition: "0.5s ease-in", color: 'grey' }
-    if (toggle) { return (<ClearTwoToneIcon style={style} />) } else { null }
+    // if () { return (<ClearTwoToneIcon style={style} />) } else { null }
   }
   const image_style = {
     width: '50px',
@@ -107,7 +107,7 @@ const Menue_Bar = (props) => {
   ]
   const menu_size = () => {
     return (
-      toggle ?
+      true ?
         { height: '80vh', position: "fixed", top: '0', width: '100vw', minWidth: "320px" } :
         { height: '0', position: 'fixed', width: '100vw' }
     )

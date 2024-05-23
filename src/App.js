@@ -12,15 +12,17 @@ function App() {
 
     const [toggle, setToggle] = useState(false);
     return (
-        <div className='App'>
+      <div className='App'>
         <Router >
           <Menue_Bar />
-            <Routes>
-                <Route path="/" element={<Body />} />
-            </Routes>
-         <DownBar />
-      </Router>            
-        </div>
+          <Routes>
+            <Route path="/" element={<Body />} />
+          </Routes>
+          <div>
+            <DownBar />
+          </div>
+        </Router>
+      </div>
     );
 }
 

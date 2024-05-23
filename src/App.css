@@ -18,18 +18,18 @@
 }
 
 .parallax-image-01 {
-  background-image: url("/public/assets/hero_new.jpg");
+  background-image: url("/assets/hero_new.jpg");
   background-position: top;
   height: 50vh;
 }
 
 .parallax-image-02 {
-  background-image: url("/public/assets/hero_one.jpg");
+  background-image: url("/assets/hero_one.jpg");
 
 }
 
 .parallax-image-03 {
-  background-image: url("/public/assets/hero_new.jpg");
+  background-image: url("/assets/hero_new.jpg");
 }
 section {
   padding: 44px;
@@ -81,7 +81,7 @@ section > h2 {
   line-height: 1;
   text-align: center;
   -webkit-text-stroke: 1px white;
-  background: url(../public/img/back.png);
+  background: url(/img/back.png);
   -webkit-background-clip: text;
   background-position: 0 0;
   animation: back 20s linear infinite;
