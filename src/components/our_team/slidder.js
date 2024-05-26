@@ -98,8 +98,6 @@ const TeamQC = () => {
   return (
     <div id="team_slidder" className="team_slidder"  ref={bankAccountsRef}>
       <Profile image={'github_profile.jpg'}/>
-      <Profile image={'rufus_head_shot.jpeg'}/>      
-      <Profile image={'kene_headshot.jpeg'}/>
     </div>
   );
 };

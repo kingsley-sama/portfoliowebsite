@@ -102,7 +102,7 @@ section > h2 {
   margin-bottom: 10px;
 }
 
-.contents button 
+#about 
 {
   
   color: white;
@@ -169,6 +169,53 @@ section > h2 {
 .about_us p{
   text-align: center;
 }
+
+.explore-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  padding: 0;
+  margin-inline: auto;
+  border-radius: 50%;
+  border: none;
+  font-family: var(--ff-heading);
+  font-size: 20px;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  color: var(--dark-blue);
+}
+
+.explore-button:focus-visible {
+  outline: none;
+}
+
+.explore-button::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 50%;
+  transition: all 80ms linear;
+}
+
+.explore-button:hover::before,
+.explore-button:focus-visible::before {
+  width: 220px;
+  height: 220px;
+  outline: none;
+}
+
+.explore-button__text {
+  margin-top: 10px;
+}
+
 @media (min-width: 650px){
   .parallax-image-01 {
     height: 100vh;
@@ -184,7 +231,7 @@ section > h2 {
     font-size: 2vw; 
   }
   
-  .contents button 
+#about
   {
     color: white;
     font-weight: lighter;
@@ -194,5 +241,6 @@ section > h2 {
     border-radius: 10px;
     padding: 5px;
     width: 150px;
-  } 
+  }
+
 }

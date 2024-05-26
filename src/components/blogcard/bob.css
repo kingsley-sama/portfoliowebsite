@@ -1,68 +1,97 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-.card{
-    display: flex;
-  flex-direction: column;
-  margin-top: 0px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 300px;
-  border-radius: 10px;
-  width: 100%;
-}
 
 
-
-.card__body_ {
-  padding: 1rem;
-  width: 100%;
+main{
   display: flex;
-  font-weight: bold;
+  font-family: "Fraunces", serif;
   align-items: center;
-  flex-direction: column;
-
+  justify-content: center;
+  background-color: hsl(0, 0%, 100%);
+  max-width: 600px;
+  border-radius: 10px;
 }
 
-
-.tag {
-  align-self: flex-start;
-  padding: .25em .75em;
-  border-radius: 1em;
-  font-size: .75rem;
+.left{
+  width: 50%;
 }
 
-.tag + .tag {
-  margin-left: .5em;
+.left img{
+  display: block;
+  width: 100%;
+  border-radius: 10px 0 0 10px;
 }
 
+.right{
+  width: 50%;
+  padding: 2rem;
+}
 
+.right h1{
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  color: hsl(228, 12%, 48%);
+  padding: 8px 0;
+}
 
-.tag-red {
-  background-color: #000020;
+.right h2{
+  font-size: 2em;
+  padding: 16px 0;
+  line-height: 0.8em;
+}
+
+.right p{
+  padding: 14px 0;
+  color: hsl(228, 12%, 48%);
+}
+
+.price{
+  display: flex;
+  align-items: center;
+}
+
+.price .discount-price{
+  font-size: 2em;
+  font-weight: bold;
+  color: hsl(158, 36%, 37%);
+}
+
+.price .real-price{
+  text-decoration: line-through;
+  margin-left: 1rem;
+  font-size: 0.9em;
+}
+
+button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 13px;
+  font-weight: bold;
   color: white;
+  border: none;
+  background-color: hsl(158, 36%, 37%);
+  border-radius: 10px;
 }
 
-.card__body h4 {
-  font-size: 1.5rem;
-  text-transform: capitalize;
+button i {
+  margin-right: 0.5rem;
 }
 
-.card__footer {
-  display: flex;
-  padding: 1rem;
-  margin-top: auto;
-}
 
-.user {
-  display: flex;
-  gap: .5rem;
+@media (max-width: 600px) {
+  main{
+    width: 90vw;
+    flex-direction: column;
+  }
+
+  .left, 
+  .right{
+    width: 100%;
+  }
+
+  .left img{
+    border-radius: 10px 10px 0 0;
+    height: 400px;
+  }
 }

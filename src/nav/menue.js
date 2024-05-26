@@ -53,7 +53,7 @@ const DropDownMenu = () => {
   )
 }
 
-const Menue_Bar = (props) => {
+const Menue_Bar = ({toggle}) => {
   const [navbarActive, setNavbarActive] = useState(false);
   const [isOpen, setOpen] = useState(false)
   const toggleNavbar = () => {
@@ -61,7 +61,7 @@ const Menue_Bar = (props) => {
   };
   const set_style = () => {
     const style = { fontSize: '30px', fontWeight: 'bold', transition: "0.5s ease-in", color: 'grey' }
-    // if () { return (<ClearTwoToneIcon style={style} />) } else { null }
+    {/*if (toggle) { return (<ClearTwoToneIcon style={style} />) } else { null }*/}
   }
   const image_style = {
     width: '50px',

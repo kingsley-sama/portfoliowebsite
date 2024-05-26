@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route,Outlet } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom"
 import DownBar, { DownMenu } from './root/bottom_bar';
 import Header, { Menue_Bar } from './nav/menue';
 import { HorizontalRule, Money, MoneyOutlined, RemoveRedEye } from '@mui/icons-material';
@@ -8,28 +8,34 @@ import Cards from './components/projects';
 import Profile from './components/our_team';
 import TeamQC from './components/our_team/slidder';
 import HorizontalScroll from './components/Animations';
+import ProductReview from './components/blogcard/bob';
 function App() {
 
-    const [toggle, setToggle] = useState(false);
-    return (
-      <div className='App'>
-        <Router >
-          <Menue_Bar />
-          <Routes>
-            <Route path="/" element={<Body />} />
-          </Routes>
-          <div>
-            <DownBar />
-          </div>
-        </Router>
-      </div>
-    );
+  const [toggle, setToggle] = useState(false);
+
+  return (
+    <div className='App'>
+      <Router >
+        <Menue_Bar toggle={toggle} />
+        <Routes>
+          <Route path="/" element={<Body />} />
+        </Routes>
+        <div>
+          <DownBar />
+        </div>
+      </Router>
+    </div>
+  );
 }
 
 export default App;
 
-const Body = () =>
- {
+const Body = () => {
+  const [page, setPage] = useState('home');
+  function changePage(e) {
+    setPage(e.currentTarget.dataset.page);
+
+  }
   return (
     <div>
       <div className="parallax-image parallax-image-01">
@@ -38,42 +44,50 @@ const Body = () =>
             <div>
               <h1>Kingsley Francis <br /> Okpo</h1>
               <h3>Full Stack Web Developer <br /> & SE</h3>
-              <button>About</button>
+              <button id='about'>About</button>
             </div>
+
           </div>
+          <button
+            className='explore-button'
+            data-page='destination'
+            onClick={changePage}
+          >
+            <span className='explore-button__text'>Explore</span>
+          </button>
         </div>
       </div>
       <section id='about-us'>
         <h2>About Me</h2>
-        <p> 
-          In the academic realm, I navigate the complexities of mathematics, wielding logic with precision. Beyond academia, I am a full-stack software engineer fluent in Linux, adept at server setups, configurations, and domain management. From abstract theories to practical solutions, I seamlessly transition between worlds. With expertise in mathematics and software, I architect scalable systems and deploy projects with finesse. My proficiency extends to crafting elegant code and orchestrating the symphony of server management. I am both the mathematician unraveling equations and the engineer optimizing algorithms. In this fusion of disciplines, I am a master of my craft, ensuring every aspect of a project is finely tuned for success. With an unwavering dedication to excellence,
-          I stand ready to tackle challenges in both academia and technology, bridging the gap between
-        theory and practice with expertise and precision.</p>
-       
+        <p>
+          I am A software engineer, A Mathematics Major and and AI enthusiast with key interest in
+          Building full scale softwares and embeding the ability to make decisions based on conclusion from
+          Logical steps. I Love Number theory and how it finds practical application in encryption. This is and
+          area I would love to research someday. I am also currently serving as a research intern at the center
+          for research and development University Of Lagos. I am a co-founder at virtuallearn.com A startup aimed
+          and bringing VR into Africa to aid with the deficit in quality of education . I my free time I am a basketballer,
+          Guitarist and Jazz Music admirer. Below I have included some of my most interesting Projects.
+          If you want to connect with me you can find my socials here. Feel free to tell me the most awesome thing
+          about yourself I will listen ...
+        </p>
+
         <TeamQC />
       </section>
       <div className="parallax-image parallax-image-02"></div>
       <section>
         <h2>My PortFolioProjects</h2>
         <Cards />
-        
+
         {/* Repeat the content for each section */}
       </section>
       <div className="parallax-image parallax-image-03">
-      <div className='our_services'>
-      <h2>Our Portfolio</h2>
-		  <div>
-			<AboutUs />
-			<AboutUs />
-			<AboutUs />
-			<AboutUs />
-			<AboutUs />
-			<AboutUs />
-			<AboutUs />
-			<AboutUs />
-		  </div>
+        <div className='our_services'>
+          <h2>Articles</h2>
+          <div>
+            <ProductReview />
+          </div>
 
-		</div>
+        </div>
       </div>
       <section>
         <h2>Tech Stacks</h2>
@@ -82,15 +96,15 @@ const Body = () =>
       </section>
     </div>
   );
- }
-const AboutUs = ({project_name, image, id, link})=>{
-  return(
-	<div className='about_us'>
-	  <h3>Effective</h3>
-	  <div className='line'><div></div></div>
-    <RemoveRedEye  style={{fontSize:"70px", marginTop:"15px", marginBottom:"15px"}}/>
-    <p>Heloo world to my friends in the internet</p>
-	</div>
+}
+const AboutUs = ({ project_name, image, id, link }) => {
+  return (
+    <div className='about_us'>
+      <h3>Effective</h3>
+      <div className='line'><div></div></div>
+      <RemoveRedEye style={{ fontSize: "70px", marginTop: "15px", marginBottom: "15px" }} />
+      <p>Heloo world to my friends in the internet</p>
+    </div>
   )
 }
-  
+
