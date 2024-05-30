@@ -8,6 +8,19 @@
 .App{
   width: 100vw;
 }
+:root {
+    --Softred: hsl(7, 99%, 70%);
+    --Yellow: hsl(51, 100%, 49%);
+    --Darkdesaturatedcyan: hsl(167, 40%, 24%);
+    --Darkblue: hsl(198, 62%, 26%);
+    --Darkmoderatecyan: hsl(168, 34%, 41%);
+    --Verydarkdesaturatedblue: hsl(212, 27%, 19%);
+    --Verydarkgrayishblue: hsl(213, 9%, 39%);
+    --Darkgrayishblue: hsl(232, 10%, 55%);
+    --Grayishblue: hsl(210, 4%, 67%);
+    --White: hsl(0, 0%, 100%);
+}
+
 .parallax-image {
   display: block;
   height: 100vh;
@@ -31,22 +44,79 @@
 .parallax-image-03 {
   background-image: url("/assets/hero_new.jpg");
 }
-section {
-  padding: 44px;
+
+/* about */
+.text-container {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    text-wrap: wrap;
+    align-items: left;
+    text-align: left;
+    padding:4em;
+	width: 60%;
+    margin:0;
+    line-height: 2em;
+    color: var(--Verydarkdesaturatedblue);
 }
+
+.text-container>h1 {
+    font-size: 3em;
+    line-height: 1.5em;
+    font-family: "Fraunces", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.text-container>p {
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: var(--Darkgrayishblue);
+}
+
+.learnmore1 {
+    font-family: "Fraunces", sans-serif !important;
+    font-weight: 900 !important;
+    font-style: normal !important;
+    text-decoration-line: underline;
+    text-decoration-color: var(--Yellow);
+    text-decoration-thickness: 5px;
+    color: var(--Verydarkdesaturatedblue) !important;
+}
+
+.learnmore2 {
+    font-family: "Fraunces", sans-serif !important;
+    font-weight: 900 !important;
+    font-style: normal !important;
+    text-decoration-line: underline;
+    text-decoration-color: var(--Softred);
+    text-decoration-thickness: 5px;
+    color: var(--Verydarkdesaturatedblue) !important;
+}
+
+
+/*about */
 #about-us{
   padding: 0px;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
   background-color: rgba(0,0,0,0.2);
+  height: fit-content;
+  max-height: 100vh;
 }
+
 section > h2 {
   text-transform: uppercase;
   margin-bottom: 24px;
 }
-
+#about{
+  height: 100%;
+  width: 40%;
+  background-color: red;
+}
 .contents{
   height: 100%;  
   width: 100%;
@@ -112,6 +182,7 @@ section > h2 {
   border-radius: 10px;
   padding: 5px;
   width: 150px;
+
   background-color:#ffb366;
 }
 .contents button:hover
@@ -231,16 +302,5 @@ section > h2 {
     font-size: 2vw; 
   }
   
-#about
-  {
-    color: white;
-    font-weight: lighter;
-    font-size: 4vh;
-    margin: 10px;
-	border: none;
-    border-radius: 10px;
-    padding: 5px;
-    width: 150px;
-  }
 
 }
