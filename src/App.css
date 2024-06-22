@@ -20,7 +20,28 @@
     --Grayishblue: hsl(210, 4%, 67%);
     --White: hsl(0, 0%, 100%);
 }
+.projects_header{
+  font-family: 'Roboto', sans-serif;
+  font-size: 2em; 
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; 
+  margin-top: 20px; 
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  line-height: 1.4;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease-in-out;
+}
 
+/* Add some hover effects */
+.projects_header:hover {
+  color: #007BFF; /* Change text color on hover */
+  border-bottom-color: #007BFF; /* Change underline color on hover */
+}
 .parallax-image {
   display: block;
   height: 100vh;

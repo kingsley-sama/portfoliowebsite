@@ -9,7 +9,7 @@ const DownMenu = () => {
   return (
     <div className="container">
       <img
-        src="https://as2.ftcdn.net/v2/jpg/04/88/01/65/1000_F_488016516_fzdbsfD5LpG2i7INwTFeScSDw6z3QtSK.jpg"
+        src="/assets/kingsley_headshot.jpeg"
         alt="Background"
         className="background-image"
       />

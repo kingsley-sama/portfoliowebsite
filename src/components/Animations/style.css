@@ -24,7 +24,8 @@
 
 .header78_image {
   display: block;
-  max-width: 300px;
+  max-width: 250px;
+  max-height: 200px;
   height: auto;
   margin: 10px;
   border: 3px solid white;

@@ -94,17 +94,17 @@ const Cards = () => {
                     <img src="" alt="background" />
                 </div>
                 <div className='content'>
-                    <h1>Use a pre-integrated platform</h1>
-                    <p>
-                        Explore our directory to find out-of-the-box 
-                        solutions that connect with Stripe, such as 
-                        <a href="#" title="Squarespace">Squarespace</a> 
-                        and <a href="#" title="Lightspeed">Lightspeed</a>.
+                    <h1>Educational Learning Platform</h1>
+                  <p>
+                    Creating a SaaS for Oderasbm, an innovative Nigerian educational service, delivering excellent
+                    learning experiences nationwide.
+                        <a href="#" title="Squarespace">Oderasbm</a> 
+                      
                     </p>
                 </div>
                 <div className="action-bottom-bar">
                     <a href="#">
-                        Set Directory
+                        View More information Here
                         <ChevronRightIcon className="chevron" />
                         <ArrowForwardIcon className="arrow" />
                     </a>
@@ -115,12 +115,12 @@ const Cards = () => {
                     <img src="" alt="background" />
                 </div>
                 <div className='content'>
-                    <h1>Use a pre-integrated platform</h1>
-                    <p>
-                        Explore our directory to find out-of-the-box 
-                        solutions that connect with Stripe, such as 
-                        <a href="#" title="Squarespace">Squarespace</a> 
-                        and <a href="#" title="Lightspeed">Lightspeed</a>.
+                    <h1>Odomite Rentals</h1>
+                  <p>
+                    This top-performing U.S.-based e-commerce service excels in
+                    managing client needs and orders. They boast a perfect 5-star rating on
+                    Google, driven by their exceptional client onboarding process.
+                     <a href="#" title="Squarespace">OdomiteRentals</a> 
                     </p>
                 </div>
                 <div className="action-bottom-bar">
@@ -136,9 +136,11 @@ const Cards = () => {
                     <img src="assets/card-2.png" alt="background" />
                 </div>
                 <div className='content'>
-                    <h1>Build with Stripe-certified experts</h1>
-                    <p>
-                        Work with a Stripe consulting partner that can integrate and deploy Stripe solutions for you.
+                    <h1>Orion Shell</h1>
+                  <p>
+                    I'm developing a custom Linux shell in C and have a functional build available on
+                    GitHub. I'm seeking developers to contribute and help make this open-source project a success.
+
                     </p>
                 </div>     
                 <div className="action-bottom-bar">
@@ -154,14 +156,15 @@ const Cards = () => {
                     <img src="assets/card-3.png" alt="background" />
                 </div>
                 <div className='content'>
-                    <h1>Try our no-code products</h1>
+                    <h1>Virtual Learn</h1>
                     <p>
-                        Create an <a href="#" title="Invoice">invoice</a> or share a <a href="#" title="Payment link">payment link</a> directly from your Dashboard to start generating revenue in minutes – no code required. 
+                      An AI-powered React learning platform that enhances student learning and integrates a community for
+                      content filtering.
                     </p>
                 </div>
                 <div className="action-bottom-bar">
                     <a href="#">
-                        Explore no-code 
+                      View The mvp here
                         <ChevronRightIcon className="chevron" />
                         <ArrowForwardIcon className="arrow" />
                     </a>

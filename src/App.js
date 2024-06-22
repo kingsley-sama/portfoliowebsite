@@ -81,7 +81,7 @@ const Body = () => {
         <VideoPlayer />
       </div>
       <section>
-        <h2>My PortFolioProjects</h2>
+        <h2 className='projects_header'>Projects</h2>
         <Cards />
 
         {/* Repeat the content for each section */}
@@ -97,7 +97,7 @@ const Body = () => {
         </div>
       </div>
       <section>
-        <h2>Tech Stacks</h2>
+        <h2 className='projects_header'>Tech Stacks</h2>
         <HorizontalScroll direction="right" speed={0.09} />
         <HorizontalScroll direction="left" speed={0.06} />
       </section>

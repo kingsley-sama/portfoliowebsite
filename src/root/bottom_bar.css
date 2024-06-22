@@ -184,9 +184,12 @@ body, html {
 }
 .background-image {
   width: 50%;
-  height: 70%;
+  min-height: 250px;
+  height: 80%;
   display: block;
   opacity: 0.4;
+  max-width: 350px;
+  
 }
 
 .overlay {

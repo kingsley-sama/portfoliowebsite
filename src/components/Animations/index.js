@@ -31,45 +31,61 @@ const HorizontalScroll = ({ direction = 'right', speed = 0.1 }) => {
   // Image data array containing all images
   const imageData = [
     {
-      src: "https://assets-global.website-files.com/6437f1cee9bf232c0289bfd7/6437f1cee9bf23047589c03b_1.webp",
-      alt: "exemple boisson idam"
+      src: "/img/pythonista.jpeg",
+      alt: "python"
     },
     {
-      src: "https://assets-global.website-files.com/6437f1cee9bf232c0289bfd7/6437f1cee9bf231ba789c037_2.webp",
-      alt: "intérieur idam"
+      src: "/img/morereact.png",
+      alt: "react"
     },
     {
-      src: "https://assets-global.website-files.com/6437f1cee9bf232c0289bfd7/6437f1cee9bf23a59889c03f_3.webp",
-      alt: "exemple plat idam"
+      src: "/img/cforweb.png",
+      alt: "c"
     },
     {
-      src: "https://assets-global.website-files.com/6437f1cee9bf232c0289bfd7/6437f1cee9bf230b4789c039_6.webp",
-      alt: "exemple boisson idam"
+      src: "/img/git.png",
+      alt: "git"
     },
     {
-      src: "https://assets-global.website-files.com/6437f1cee9bf232c0289bfd7/6437f1cee9bf23262b89c038_5.webp",
-      alt: "intérieur idam"
+      src: "/img/noded.png",
+      alt: "node"
     },
     {
-      src: "https://assets-global.website-files.com/6437f1cee9bf232c0289bfd7/6437f1cee9bf23047589c03b_1.webp",
-      alt: "exemple boisson idam"
+      src: "/img/django.png",
+      alt: "django"
     },
     {
-      src: "https://assets-global.website-files.com/6437f1cee9bf232c0289bfd7/6437f1cee9bf231ba789c037_2.webp",
-      alt: "intérieur idam"
+      src: "/img/emacsy.png",
+      alt: "lisp"
     },
     {
-      src: "https://assets-global.website-files.com/6437f1cee9bf232c0289bfd7/6437f1cee9bf23a59889c03f_3.webp",
-      alt: "exemple plat idam"
+      src: "/img/sql.png",
+      alt: "sql"
     },
     {
-      src: "https://assets-global.website-files.com/6437f1cee9bf232c0289bfd7/6437f1cee9bf230b4789c039_6.webp",
-      alt: "exemple boisson idam"
+      src: "/img/puppet.jpg",
+      alt: "puppet"
     },
     {
-      src: "https://assets-global.website-files.com/6437f1cee9bf232c0289bfd7/6437f1cee9bf23262b89c038_5.webp",
-      alt: "intérieur idam"
-    }
+      src: "/img/nginx.png",
+      alt: "nginx"
+    },
+    {
+      src: "/img/pytho_flask.png",
+      alt: "flask"
+    },
+    {
+      src: "/img/atlacian.png",
+      alt: "atlacian"
+    },
+    {
+      src: "/img/slack.jpg",
+      alt: "slack"
+    },
+    {
+      src: "/img/discord.jpeg",
+      alt: "discord"
+    },
   ];
 
   return (
