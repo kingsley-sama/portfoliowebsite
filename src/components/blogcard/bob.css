@@ -6,7 +6,7 @@ main{
   align-items: center;
   justify-content: center;
   background-color: hsl(0, 0%, 100%);
-  max-width: 600px;
+  max-width: 500px;
   border-radius: 10px;
 }
 
@@ -27,20 +27,20 @@ main{
 
 .right h1{
   font-family: "Montserrat", sans-serif;
-  font-size: 0.8em;
+  font-size: 0.9em;
   text-transform: uppercase;
   color: hsl(228, 12%, 48%);
   padding: 8px 0;
 }
 
 .right h2{
-  font-size: 2em;
-  padding: 16px 0;
-  line-height: 0.8em;
+  font-size: 1em;
+  padding: 10px 0;
+  line-height: 1.1em;
 }
 
 .right p{
-  padding: 14px 0;
+  padding: 10px 0;
   color: hsl(228, 12%, 48%);
 }
 
@@ -50,13 +50,12 @@ main{
 }
 
 .price .discount-price{
-  font-size: 2em;
+  font-size: 1em;
   font-weight: bold;
   color: hsl(158, 36%, 37%);
 }
 
 .price .real-price{
-  text-decoration: line-through;
   margin-left: 1rem;
   font-size: 0.9em;
 }
@@ -79,7 +78,7 @@ button i {
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 600px) { 
   main{
     width: 90vw;
     flex-direction: column;

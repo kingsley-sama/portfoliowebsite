@@ -1,88 +1,58 @@
-import React, { Component } from 'react';
-import "./card.css"
-import GradeIcon from '@mui/icons-material/Grade';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import { useParams } from "react-router-dom";
-import { fetch_single_movies } from '../../fetchapi';
-import { IMAGE_BASE_URL, BACKDROP_SIZE} from '../../config';
+import React, { useState, useRef, useEffect } from 'react';
+import './card.css'; // Import the CSS file
 
-function withRouter(Component) {
-  return props => <Component {...props} params={useParams()} />;
-}
-class MoviePage extends Component {
-constructor(props) {
-    super(props);
-    this.state ={
-      single_movie : {}
+const VideoPlayer = () => {
+  const videoRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
+
+  const togglePlay = () => {
+    const video = videoRef.current;
+    if (video.paused) {
+      video.play();
+      setPlaying(true);
+    } else {
+      video.pause();
+      setPlaying(false);
     }
-}  
+  };
 
-
-
-componentDidMount(){
-    const id = this.props.params;
-    const api = async () => {
-      const movies = await fetch_single_movies(id.movie)
-      this.setState({single_movie:movies})
-      console.log(this.state.single_movie)  
+  const handleVideoClick = () => {
+    if (!playing) {
+      togglePlay();
     }
+  };
 
-    api(1)
+  const updateButton = () => {
+    const video = videoRef.current;
+    setPlaying(!video.paused);
+  };
 
+  useEffect(() => {
+    const video = videoRef.current;
+    video.addEventListener('play', updateButton);
+    video.addEventListener('pause', updateButton);
     
-    
-   
-}
+    return () => {
+      video.removeEventListener('play', updateButton);
+      video.removeEventListener('pause', updateButton);
+    };
+  }, []);
 
-  render() {
-    
-    const backgroundcolor = {
-        color:"rgb(250, 250, 250,0.77)",
-        fontSize: "20px",
-        marginLeft: "0px",
-        marginRight: "0px"
-
-    }
-    return (
-      <div className="containerised" style={{backgroundImage:`url(${IMAGE_BASE_URL+BACKDROP_SIZE+this.state.single_movie.backdrop_path})`}}>
-        <div className='norm'>
-        <div className='movie_image'  >
-          <div className='glass'>
-           <div className='image'  style={{backgroundImage:`url(${IMAGE_BASE_URL+BACKDROP_SIZE+this.state.single_movie.poster_path})`}}></div>
-          </div>
-        </div>
-        <div className='description_for_movie'>
-          <h1> {this.state.single_movie.title}</h1>
-          
-          
-            <p className='movie_description'>Description: {this.state.single_movie.overview}</p>
-            <div className='time_stamps'>
-              <p>Release Date: {this.state.single_movie.release_date}</p>
-              <p>Duration: {this.state.single_movie.duration}</p>
-              
-            </div>
-          
-          <div className='upvotes'>upvotes<ThumbUpIcon style={backgroundcolor}/>:{this.state.single_movie.vote_count}   Likes<FavoriteIcon style={backgroundcolor}/>:{this.state.single_movie.vote_count} Rating<GradeIcon style={backgroundcolor}/>:{this.state.single_movie.vote_average}  </div>
-        </div>
-        </div>
-      </div>
-    );
-  }
-}
-
-const Cast = ({ cast }) => {
   return (
-    <div>
-      <h2>Cast</h2>
-      <ul>
-        {cast.map(actor => (
-          <li key={actor.name}>
-            {actor.name} as {actor.role}
-          </li>
-        ))}
-      </ul>
+    <div className="player">
+      <div className={`thumbnail ${playing ? 'hide' : ''}`} onClick={togglePlay}>
+        <div className="play-button">&#9658;</div>
+      </div>
+      <video
+        className="player__video viewer"
+        ref={videoRef}
+        src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+        onClick={handleVideoClick}
+        style={{ width: '100%' }}
+      />
+      {/* ... other controls */}
     </div>
   );
-}
-export default withRouter(MoviePage);
+};
+
+export default VideoPlayer;

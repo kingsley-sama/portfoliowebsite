@@ -11,23 +11,22 @@ class ProductReview extends Component {
           <img src={productImage} alt="Parfum image" />
         </section>
         <section className="right">
-          <h1>P e r f u m e</h1>
+          <h1>D  e  v  O  p  s</h1>
 
-          <h2>Gabrielle Essence Eau De Parfum</h2>
+          <h2>what happens when www.google.com and hit enter</h2>
           
           <p>
-            A floral, solar and voluptuous interpretation composed by Olivier Polge,
-            Perfumer-Creator for the House of CHANEL.
+            An intricate dive into the working principle behind every web request
+            that has ever been sent.
           </p>
           
           <div className="price">
-            <p className="discount-price">$149.99</p>
-            <p className="real-price">$169.99</p>
+            <p className="discount-price">nohup Kingsley</p>
+            <p className="real-price">22/04/2024</p>
           </div>
           
           <button>
-            <i><img src={cartIcon} alt="Cart Icon" /></i>
-            Add to Cart
+            Read Full Article
           </button>
         </section>
       </main>

@@ -38,7 +38,7 @@ const Profile = ({image}) => {
                     </li>
                 </ul>
                 <div className="profile-name">
-                    <h2>Melissa Taylor</h2>
+                    <h2>Kingsley Okpo</h2>
                     <div className="profile-bio">
                         I'm a JavaScript full-stack engineer,
                         love working with <em>React</em> and <em>Node.js</em>.
