@@ -91,7 +91,7 @@ const Cards = () => {
         <div id="bank-accounts" className="bank-accounts"  ref={bankAccountsRef}>
             <article className="card">
                 <div className='card-background'>
-                    <img src="" alt="background" />
+                    <img src="/projects_images/Oderasbm.png" alt="oderasbm" />
                 </div>
                 <div className='content'>
                     <h1>Educational Learning Platform</h1>
@@ -112,7 +112,7 @@ const Cards = () => {
             </article>
             <article className="card">
                 <div className='card-background'>
-                    <img src="" alt="background" />
+                    <img src="projects_images/odomirentals.png" alt="odomiterentals" />
                 </div>
                 <div className='content'>
                     <h1>Odomite Rentals</h1>
@@ -125,7 +125,7 @@ const Cards = () => {
                 </div>
                 <div className="action-bottom-bar">
                     <a href="#">
-                        Set Directory
+                        View Webste here
                         <ChevronRightIcon className="chevron" />
                         <ArrowForwardIcon className="arrow" />
                     </a>
@@ -133,19 +133,18 @@ const Cards = () => {
             </article>
             <article className="card">
                 <div className='card-background'>
-                    <img src="assets/card-2.png" alt="background" />
+                    <img src="projects_images/OrionShell.png" alt="orion shell" />
                 </div>
                 <div className='content'>
                     <h1>Orion Shell</h1>
                   <p>
                     I'm developing a custom Linux shell in C and have a functional build available on
                     GitHub. I'm seeking developers to contribute and help make this open-source project a success.
-
                     </p>
                 </div>     
                 <div className="action-bottom-bar">
                     <a href="#">
-                        Find Experts
+                        Get source code on Github
                         <ChevronRightIcon className="chevron" />
                         <ArrowForwardIcon className="arrow" />
                     </a>
@@ -153,7 +152,7 @@ const Cards = () => {
             </article>
             <article className="card">
                 <div className='card-background'>
-                    <img src="assets/card-3.png" alt="background" />
+                    <img src="projects_images/virtual_learn.png" alt="virtual_learn" />
                 </div>
                 <div className='content'>
                     <h1>Virtual Learn</h1>
