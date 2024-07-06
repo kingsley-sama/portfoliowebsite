@@ -65,10 +65,7 @@ const Body = () => {
             I am A software engineer, A Mathematics Major and and AI enthusiast with key interest in
             Building full scale softwares and embeding the ability to make decisions based on conclusion from
             Logical steps. I Love Number theory and how it finds practical application in encryption. This is and
-            area I would love to research someday. I am also currently serving as a research intern at the center
-            for research and development University Of Lagos. I am a co-founder at virtuallearn.com A startup aimed
-            and bringing VR into Africa to aid with the deficit in quality of education . I my free time I am a basketballer,
-            Guitarist and Jazz Music admirer. Below I have included some of my most interesting Projects.
+            area I would love to research someday. 
             If you want to connect with me you can find my socials here. Feel free to tell me the most awesome thing
             about yourself I will listen ...
           </p>
@@ -78,6 +75,7 @@ const Body = () => {
         
       </section>
       <div className="parallax-image parallax-image-02">
+        <h1>Elevator Pitch</h1>
         <VideoPlayer />
       </div>
       <section>
@@ -92,6 +90,7 @@ const Body = () => {
           <div>
             <ProductReview />
             <ProductReview />
+            <ProductReview />
           </div>
 
         </div>
@@ -103,15 +102,5 @@ const Body = () => {
       </section>
     </div>
   );
-}
-const AboutUs = ({ project_name, image, id, link }) => {
-  return (
-    <div className='about_us'>
-      <h3>Effective</h3>
-      <div className='line'><div></div></div>
-      <RemoveRedEye style={{ fontSize: "70px", marginTop: "15px", marginBottom: "15px" }} />
-      <p>Heloo world to my friends in the internet</p>
-    </div>
-  )
 }
 

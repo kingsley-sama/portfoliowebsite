@@ -9,16 +9,16 @@
   width: 100vw;
 }
 :root {
-    --Softred: hsl(7, 99%, 70%);
-    --Yellow: hsl(51, 100%, 49%);
-    --Darkdesaturatedcyan: hsl(167, 40%, 24%);
-    --Darkblue: hsl(198, 62%, 26%);
-    --Darkmoderatecyan: hsl(168, 34%, 41%);
-    --Verydarkdesaturatedblue: hsl(212, 27%, 19%);
-    --Verydarkgrayishblue: hsl(213, 9%, 39%);
-    --Darkgrayishblue: hsl(232, 10%, 55%);
-    --Grayishblue: hsl(210, 4%, 67%);
-    --White: hsl(0, 0%, 100%);
+  --Softred: hsl(7, 99%, 70%);
+  --Yellow: hsl(51, 100%, 49%);
+  --Darkdesaturatedcyan: hsl(167, 40%, 24%);
+  --Darkblue: hsl(198, 62%, 26%);
+  --Darkmoderatecyan: hsl(168, 34%, 41%);
+  --Verydarkdesaturatedblue: hsl(212, 27%, 19%);
+  --Verydarkgrayishblue: hsl(213, 9%, 39%);
+  --Darkgrayishblue: hsl(232, 10%, 55%);
+  --Grayishblue: hsl(210, 4%, 67%);
+  --White: hsl(0, 0%, 100%);
 }
 .projects_header{
   font-family: 'Roboto', sans-serif;
@@ -59,61 +59,63 @@
 
 .parallax-image-02 {
   background-image: url("/assets/hero_one.jpg");
-
+  height: fit-content;
 }
 
 .parallax-image-03 {
+  height: fit-content;
+  display: flex;
   background-image: url("/assets/hero_new.jpg");
 }
 
 /* about */
 .text-container {
-    display: flex;
-    justify-content: left;
-    flex-direction: column;
-    text-wrap: wrap;
-    align-items: left;
-    text-align: left;
-    padding:4em;
-	width: 60%;
-    margin:0;
-    line-height: 2em;
-    color: var(--Verydarkdesaturatedblue);
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  text-wrap: wrap;
+  align-items: left;
+  text-align: left;
+  padding:4em;
+  width: 60%;
+  margin:0;
+  line-height: 2em;
+  color: var(--Verydarkdesaturatedblue);
 }
 
 .text-container>h1 {
-    font-size: 3em;
-    line-height: 1.5em;
-    font-family: "Fraunces", sans-serif;
-    font-weight: 900;
-    font-style: normal;
+  font-size: 3em;
+  line-height: 1.5em;
+  font-family: "Fraunces", sans-serif;
+  font-weight: 900;
+  font-style: normal;
 }
 
 .text-container>p {
-    font-family: "Barlow", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    color: var(--Darkgrayishblue);
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--Darkgrayishblue);
 }
 
 .learnmore1 {
-    font-family: "Fraunces", sans-serif !important;
-    font-weight: 900 !important;
-    font-style: normal !important;
-    text-decoration-line: underline;
-    text-decoration-color: var(--Yellow);
-    text-decoration-thickness: 5px;
-    color: var(--Verydarkdesaturatedblue) !important;
+  font-family: "Fraunces", sans-serif !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+  text-decoration-line: underline;
+  text-decoration-color: var(--Yellow);
+  text-decoration-thickness: 5px;
+  color: var(--Verydarkdesaturatedblue) !important;
 }
 
 .learnmore2 {
-    font-family: "Fraunces", sans-serif !important;
-    font-weight: 900 !important;
-    font-style: normal !important;
-    text-decoration-line: underline;
-    text-decoration-color: var(--Softred);
-    text-decoration-thickness: 5px;
-    color: var(--Verydarkdesaturatedblue) !important;
+  font-family: "Fraunces", sans-serif !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+  text-decoration-line: underline;
+  text-decoration-color: var(--Softred);
+  text-decoration-thickness: 5px;
+  color: var(--Verydarkdesaturatedblue) !important;
 }
 
 
@@ -133,11 +135,7 @@ section > h2 {
   text-transform: uppercase;
   margin-bottom: 24px;
 }
-#about{
-  height: 100%;
-  width: 40%;
-  background-color: red;
-}
+
 .contents{
   height: 100%;  
   width: 100%;
@@ -181,7 +179,7 @@ section > h2 {
 
 @keyframes back{
   100%{
-      background-position: 2000px 0;
+    background-position: 2000px 0;
   }
 }
 
@@ -193,19 +191,7 @@ section > h2 {
   margin-bottom: 10px;
 }
 
-#about 
-{
-  
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  margin: 10px;
-  border-radius: 10px;
-  padding: 5px;
-  width: 150px;
 
-  background-color:#ffb366;
-}
 .contents button:hover
 {
   background-color: transparent;
@@ -230,27 +216,79 @@ section > h2 {
   align-items: center;
   justify-content: space-around;
 }
-@media (max-width: 600px) {
-  .our_services div{
-  height: fit-content;
-  width: 90%;
+/* Media querry for about page*/
+#about_image{
+  height: 100%;
+
+  width: 40%;
+  min-height: 600px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
+}
+
+@media (max-width: 600px) {
+  #about_image{
+	height: 100%;
+	width: 100%;
+	margin-top: 20px;
+	min-height: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+  #about-us{
+	padding: 0px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	height: fit-content;
+	max-height: 200vh;
+  }
+
+  .our_services div{
+	height: fit-content;
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+  }
+  .text-container {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    text-wrap: wrap;
+    align-items: center;
+    text-align: left;
+    padding:0;
+	width: 100%;
+    margin-top:30px;
+	line-height: 1.5;
+	padding-left: 10px;
+	padding-right:5px;
+    color: var(--Verydarkdesaturatedblue);
+  }
+
+  .text-container>h1 {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  font-family: "Fraunces", sans-serif;
+  font-weight: 900;
+  font-style: normal;
 }
 }
 .about_us{
-    width: fit-content;
-    max-width: 200px;
-    display: flex;
-    min-width: 200px;
-    min-height: 250px;
-    flex-direction: column;
-    color: white;
-    justify-content: space-around;
-    margin: 15px;
-    
+  width: fit-content;
+  max-width: 200px;
+  display: flex;
+  min-width: 200px;
+  min-height: 250px;
+  flex-direction: column;
+  color: white;
+  justify-content: space-around;
+  margin: 15px;
+  
 }
 .about_us .line {
   border: 1px solid white;
@@ -317,7 +355,16 @@ section > h2 {
 .explore-button__text {
   margin-top: 10px;
 }
+@media (max-width: 600px){
+  .text-container>p {
+    font-family: "Barlow", sans-serif;
+    font-weight:normal;
+	font-size: 16px;
+    color: var(--Darkgrayishblue);
+  }
 
+
+}
 @media (min-width: 650px){
   .parallax-image-01 {
     height: 100vh;
@@ -334,13 +381,4 @@ section > h2 {
   }
   
 
-}
-#about_image{
-  height: 100%;
-
-  width: 40%;
-  min-height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
 }
