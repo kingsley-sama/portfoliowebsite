@@ -9,7 +9,7 @@ import Profile from './components/our_team';
 import TeamQC from './components/our_team/slidder';
 import HorizontalScroll from './components/Animations';
 import ProductReview from './components/blogcard/bob';
-import VideoPlayer from './components/movies/card';
+import VideoPlayer from './components/movies/video';
 function App() {
 
   const [toggle, setToggle] = useState(false);
@@ -74,8 +74,7 @@ const Body = () => {
         <div id='about_image'><TeamQC /></div>
         
       </section>
-      <div className="parallax-image parallax-image-02">
-        <h1>Elevator Pitch</h1>
+      <div className="videoplayer">
         <VideoPlayer />
       </div>
       <section>
@@ -87,7 +86,7 @@ const Body = () => {
       <div className="parallax-image parallax-image-03">
         <div className='our_services'>
           <h1>Articles</h1>
-          <div>
+          <div className='articles_page'>
             <ProductReview />
             <ProductReview />
             <ProductReview />

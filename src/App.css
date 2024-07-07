@@ -20,6 +20,14 @@
   --Grayishblue: hsl(210, 4%, 67%);
   --White: hsl(0, 0%, 100%);
 }
+.videoplayer{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  background: #000;
+}
 .projects_header{
   font-family: 'Roboto', sans-serif;
   font-size: 2em; 
@@ -65,7 +73,6 @@
 .parallax-image-03 {
   height: fit-content;
   display: flex;
-  background-image: url("/assets/hero_new.jpg");
 }
 
 /* about */
@@ -211,6 +218,7 @@ section > h2 {
 .our_services div{
   height: fit-content;
   width: 90%;
+  flex-wrap: wrap;
   display: flex;
   flex-direction: row;
   align-items: center;
