@@ -60,8 +60,10 @@
 }
 
 .parallax-image-01 {
-  background-image: url("/assets/hero_new.jpg");
+  background-image: url("/assets/20240716_140707.jpg");
   background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
   height: 50vh;
 }
 

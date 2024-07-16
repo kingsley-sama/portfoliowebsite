@@ -4,7 +4,7 @@ import Profile from '.';
 
 const TeamQC = () => {
   return (
-     <Profile image={'github_profile.jpg'}/>
+     <Profile image={'portrait.jpg'}/>
    );
 };
 export default TeamQC;

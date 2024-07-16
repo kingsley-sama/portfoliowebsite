@@ -11,7 +11,7 @@ const Profile = ({image}) => {
             <div className="profile">
                 <div className="profile-image">
                     <img
-                      src={`/img/${image}`}
+                      src={`/assets/${image}`}
                         alt="Profile"
                     />
                 </div>

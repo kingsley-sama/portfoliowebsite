@@ -2,16 +2,16 @@ import React, { useEffect, useRef } from 'react';
 import './bottom_bar.css';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
-import { FacebookSharp, GitHub, Twitter, LinkedIn, Instagram, ArrowDownward, ViewCarousel, ArrowDropUp, Email, YouTube, Message } from '@mui/icons-material';
+import {Pinterest, GitHub, Facebook, LinkedIn, Instagram, ArrowDownward, ViewCarousel, ArrowDropUp, Email,Message, Twitter } from '@mui/icons-material';
 
 const DownMenu = () => {
- 
+
   return (
-    <div className="container">
+    <div className="container_downbar">
       <img
-        src="/assets/kingsley_headshot.jpeg"
+        src="/assets/20240711135509__MG_8632.JPG (1).jpg"
         alt="Background"
-        className="background-image"
+        className="bottom_background-image"
       />
       <div className="overlay">
         <ul className="menu-options">
@@ -26,7 +26,7 @@ const DownMenu = () => {
 };
 
 const DownBar = () => {
-   const containerRef = useRef(null);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -65,22 +65,24 @@ const DownBar = () => {
   }, []);
 
   return (
-    <div className='downcomponent'  ref={containerRef}>
+    <div className='downcomponent' ref={containerRef}>
       <DownMenu />
-      <div className='our_socials'>
         <div className='modals'>
           <div className='goto_top'>
             <ArrowUpwardIcon style={{ color: 'white', fontSize: '30px', margin: "5px" }} />
           </div>
         </div>
-      </div>
-      <div className='text'>
-        <p>copyright: kingsleyokpo.tech 2024</p>
-        <p>Email: kngsley2018@gmail.com
-        </p>
-        <p>This website was made responsively  with love
-        </p>
-      </div>
+      <footer className="sunnyside-unique-footer">
+        <div className="sunnyside-unique-footer-content">
+          <h2 className="sunnyside-unique-footer-title">kngsley2018@gmail.com</h2>
+          <div className="sunnyside-unique-social-icons">
+            <Facebook className="sunnyside-unique-icon" />
+            <Instagram className="sunnyside-unique-icon" />
+            <Twitter className="sunnyside-unique-icon" />
+            <Pinterest className="sunnyside-unique-icon" />
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
