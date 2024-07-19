@@ -4,7 +4,7 @@
   --green-link: var(--bright-green);
   --black: #080808;
   --white: white;
-  --dark-green:  #3c4637;;
+  --dark-green:  #232f1f;
   --transparent: transparent;
   --dark-beige2: #e5e3db;
   --light-green:  #232f1f;
@@ -349,7 +349,7 @@
   }
 }
 .sunnyside-unique-footer {
-  background-color:var(--dark-green);
+  background-color:transparent;
   padding: 40px 20px;
   text-align: center;
   width: 100%;

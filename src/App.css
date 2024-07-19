@@ -20,6 +20,20 @@
   --Grayishblue: hsl(210, 4%, 67%);
   --White: hsl(0, 0%, 100%);
 }
+#tech_stacks{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+#projects{
+  height: 100vh;
+}
+#articles{
+  height: fit-content;
+  min-height: 100vh;
+}
 .videoplayer{
     display: flex;
   align-items: center;
@@ -63,8 +77,9 @@
   background-image: url("/assets/20240716_140707.jpg");
   background-position: top;
   background-size: contain;
-  background-repeat: no-repeat;
-  height: 50vh;
+  background-repeat: repeat;
+  height: fit-content;
+  min-height: 70vh;
 }
 
 .parallax-image-02 {
@@ -73,8 +88,8 @@
 }
 
 .parallax-image-03 {
-  height: fit-content;
   display: flex;
+  height: 100vh;
 }
 
 /* about */
@@ -91,7 +106,17 @@
   line-height: 2em;
   color: var(--Verydarkdesaturatedblue);
 }
-
+#about 
+{
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 5px;
+  width: 150px;
+  background-color:#ffb366;
+}
 .text-container>h1 {
   font-size: 3em;
   line-height: 1.5em;
@@ -146,6 +171,7 @@ section > h2 {
 }
 
 .contents{
+  padding-top: 70px;
   height: 100%;  
   width: 100%;
   background-color: rgba(0,0,0,0.7);
@@ -255,7 +281,13 @@ section > h2 {
 	height: fit-content;
 	max-height: 200vh;
   }
-
+#tech_stacks{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 70vh;
+}
   .our_services div{
 	height: fit-content;
 	width: 90%;

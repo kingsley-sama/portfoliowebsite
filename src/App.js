@@ -39,7 +39,7 @@ const Body = () => {
   }
   return (
     <div>
-      <div className="parallax-image parallax-image-01">
+      <div className="parallax-image parallax-image-01" id='home'>
         <div className='contents'>
           <div>
             <div>
@@ -73,17 +73,17 @@ const Body = () => {
         </div>
         <div id='about_image'><TeamQC /></div>
         
-      </section>
-      <div className="videoplayer">
-        <VideoPlayer />
+      </section >
+      <div id='elevatior' className="videoplayer">
+        <VideoPlayer videoId="jJPmhXbgqpo"/>
+        
       </div>
-      <section>
+      <section id='projects'>
         <h2 className='projects_header'>Projects</h2>
         <Cards />
-
         {/* Repeat the content for each section */}
       </section>
-      <div className="parallax-image parallax-image-03">
+      <div id='articles' className="parallax-image parallax-image-03">
         <div className='our_services'>
           <h1>Articles</h1>
           <div className='articles_page'>
@@ -94,7 +94,7 @@ const Body = () => {
 
         </div>
       </div>
-      <section>
+      <section id='tech_stacks'>
         <h2 className='projects_header'>Tech Stacks</h2>
         <HorizontalScroll direction="right" speed={0.09} />
         <HorizontalScroll direction="left" speed={0.06} />

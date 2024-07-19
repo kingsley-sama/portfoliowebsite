@@ -85,7 +85,7 @@ const Menue_Bar = ({toggle}) => {
     },
     {
       img: '/img/doge-removebg-preview.png',
-      link: '/Portfolio',
+      link: '/#projects',
       name: 'Projects',
       classname: 'li',
       id: 3
@@ -124,9 +124,9 @@ const Menue_Bar = ({toggle}) => {
           {
             resources.map((rec) => {
               return (
-                <li key={rec.id}><Link className={rec.classname} key={rec.id} to={rec.link}>
+                <li key={rec.id}><a className={rec.classname} key={rec.id} href={rec.link}>
                   {rec.name}
-                </Link></li>
+                </a></li>
               )
             })
           }

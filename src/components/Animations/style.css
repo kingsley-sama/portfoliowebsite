@@ -24,8 +24,8 @@
 
 .header78_image {
   display: block;
-  max-width: 250px;
-  max-height: 200px;
+  max-width: 220px;
+  max-height: 180px;
   height: auto;
   margin: 10px;
   border: 3px solid white;
@@ -53,7 +53,7 @@
 }
 .header78_image {
   display: block;
-  max-width: 150px;
+  max-width: 140px;
   max-height: 100px;
   height: auto;
   margin:0;
