@@ -43,19 +43,12 @@ const Body = () => {
         <div className='contents'>
           <div>
             <div>
-              <h1>Kingsley Francis <br /> Okpo</h1>
-              <h3>Full Stack Web Developer <br /> & SE</h3>
+              <h1>Kingsley Francis Okpo</h1>
+              <h3>Full Stack Web Developer</h3>
               <button id='about'>About</button>
             </div>
 
           </div>
-          <button
-            className='explore-button'
-            data-page='destination'
-            onClick={changePage}
-          >
-            <span className='explore-button__text'>Explore</span>
-          </button>
         </div>
       </div>
       <section id='about-us'>

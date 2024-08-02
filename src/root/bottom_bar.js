@@ -15,9 +15,9 @@ const DownMenu = () => {
       />
       <div className="overlay">
         <ul className="menu-options">
-          <li>Home</li>
-          <li>Projects</li>
-          <li>About</li>
+          <li><a href='/#'> Home</a></li>
+          <li><a href='/#projects'> Projects</a></li>
+          <li>< a href='/#about' > About</a></li>
           <li>Contact</li>
         </ul>
       </div>
@@ -76,10 +76,9 @@ const DownBar = () => {
         <div className="sunnyside-unique-footer-content">
           <h2 className="sunnyside-unique-footer-title">kngsley2018@gmail.com</h2>
           <div className="sunnyside-unique-social-icons">
-            <Facebook className="sunnyside-unique-icon" />
-            <Instagram className="sunnyside-unique-icon" />
-            <Twitter className="sunnyside-unique-icon" />
-            <Pinterest className="sunnyside-unique-icon" />
+            <a className="sunnyside-unique-icon" href='https://github.com/kingsley-sama' ><GitHub className="sunnyside-unique-icon" /></a>
+            <a className="sunnyside-unique-icon"  href='https://x.com/vallxe_sama'><Twitter /></a>
+            <a className="sunnyside-unique-icon" href=''><LinkedIn  /></a>
           </div>
         </div>
       </footer>

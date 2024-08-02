@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   font-weight: lighter;
+  max-width: 100vw;
 }
 .App{
   width: 100vw;
@@ -28,14 +29,19 @@
   height: 100vh;
 }
 #projects{
-  height: 100vh;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: fit-content;
+  padding:15px;
+  max-width: 100vw;
+  max-height: 100vh;
 }
 #articles{
   height: fit-content;
   min-height: 100vh;
 }
 .videoplayer{
-    display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
@@ -69,17 +75,15 @@
   height: 100vh;
   width: 100%;
   background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+  background-position: right;
 }
 
 .parallax-image-01 {
-  background-image: url("/assets/20240716_140707.jpg");
-  background-position: top;
-  background-size: contain;
-  background-repeat: repeat;
+  background-image: url("/assets/myimage_1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   height: fit-content;
-  min-height: 70vh;
+  height: 40vh;
 }
 
 .parallax-image-02 {
@@ -195,15 +199,14 @@ section > h2 {
   height: 100%;
   display: flex;
   padding: 20px;
-  padding-left:60px;
+  padding-left:30px;
   box-sizing: border-box;
 } 
 .contents h1 {
-  margin-top: 40px;
+  margin-top: 10px;
   color: transparent;
   font-size: 2rem;
   line-height: 1;
-  text-align: center;
   -webkit-text-stroke: 1px white;
   background: url(/img/back.png);
   -webkit-background-clip: text;
@@ -281,13 +284,13 @@ section > h2 {
 	height: fit-content;
 	max-height: 200vh;
   }
-#tech_stacks{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 70vh;
-}
+  #tech_stacks{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 70vh;
+  }
   .our_services div{
 	height: fit-content;
 	width: 90%;
@@ -313,12 +316,12 @@ section > h2 {
   }
 
   .text-container>h1 {
-  font-size: 1.5em;
-  line-height: 1.5em;
-  font-family: "Fraunces", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-}
+	font-size: 1.5em;
+	line-height: 1.5em;
+	font-family: "Fraunces", sans-serif;
+	font-weight: 900;
+	font-style: normal;
+  }
 }
 .about_us{
   width: fit-content;
@@ -397,30 +400,45 @@ section > h2 {
 .explore-button__text {
   margin-top: 10px;
 }
-@media (max-width: 600px){
-  .text-container>p {
-    font-family: "Barlow", sans-serif;
-    font-weight:normal;
-	font-size: 16px;
-    color: var(--Darkgrayishblue);
+
+@media screen and (min-width: 900px) {
+  .parallax-image-01{
+	height: 100vh;
   }
-
-
-}
-@media (min-width: 650px){
-  .parallax-image-01 {
-    height: 100vh;
-  }  
-  .contents h1 {
+   .contents h1 {
     font-size: 4rem;
     text-decoration: underline;
-    
+    margin-top: 40px;
   }
-  
-  .contents h3 {
+  .contents div{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 70%;
+  border-left:4px solid #ffb366;
+  padding: 0;
+  padding-left: 10px;
+}
+.contents div div{
+  border-left:2px solid #ffcc66;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  padding: 20px;
+  padding-left:60px;
+  box-sizing: border-box;
+} 
+   .contents h3 {
+	 
     font-size: 1rem; 
     font-size: 2vw; 
   }
   
-
+}
+*{
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: lighter;
 }
