@@ -44,9 +44,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 50vh;
   width: 100vw;
-  background: #000;
+  background:rgba(0,0,0,0.2);
 }
 .projects_header{
   font-family: 'Roboto', sans-serif;
@@ -243,7 +243,7 @@ section > h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #232f1f;
   flex-direction: column;
 }
 .our_services div{
@@ -258,12 +258,12 @@ section > h2 {
 /* Media querry for about page*/
 #about_image{
   height: 100%;
-
   width: 40%;
   min-height: 600px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 600px) {

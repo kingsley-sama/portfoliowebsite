@@ -8,7 +8,7 @@ class ProductReview extends Component {
     return (
       <main>
         <section className="left">
-          <img src={productImage} alt="Parfum image" />
+          <img src={productImage} alt="article" />
         </section>
         <section className="right">
           <h1>D  e  v  O  p  s</h1>

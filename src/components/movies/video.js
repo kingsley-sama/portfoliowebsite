@@ -32,8 +32,8 @@ const VideoPlayer = ({ videoId }) => {
     // Initialize the YouTube player when the API is ready
     window.onYouTubeIframeAPIReady = () => {
       playerRef.current = new window.YT.Player('youtubePlayer', {
-        height: '360',
-        width: '640',
+        height: '60%',
+        width: '70%',
         videoId: videoId,
         playerVars: {
           'playsinline': 1,
