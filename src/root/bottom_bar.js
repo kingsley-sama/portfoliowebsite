@@ -25,7 +25,7 @@ const DownMenu = () => {
   );
 };
 
-const DownBar = () => {
+const DownBar = ({ setDownBarInView }) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -33,8 +33,10 @@ const DownBar = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           containerRef.current.classList.add('in-view');
+          setDownBarInView(true);
         } else {
           containerRef.current.classList.remove('in-view');
+          setDownBarInView(false);
         }
       },
       { threshold: 0.1 }

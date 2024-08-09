@@ -21,12 +21,32 @@
   --Grayishblue: hsl(210, 4%, 67%);
   --White: hsl(0, 0%, 100%);
 }
-#tech_stacks{
+
+.tech_stacks{
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   height: 100vh;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: white;
+  transition: background-color 2s ease;
+}
+.tech_stacks.in-view{
+  animation: colorChange 2s forwards; /* Adjusted duration here */
+  animation-play-state: paused;
+}
+.tech_stacks.tech_stacks.in-view.animation-play-state{
+  animation-play-state: running;
+}
+@keyframes colorChange {
+  from {
+    background-color: white; /* Initial background color */
+  }
+  to {
+    background-color: var(--Darkdesaturatedcyan); /* Target Color */
+  }
 }
 #projects{
   padding-left: 15px;
