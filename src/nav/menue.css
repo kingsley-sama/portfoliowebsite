@@ -1,4 +1,4 @@
-/*8 you can be very mad8*/
+
 
 .menuebar .li:hover {
     font-weight: bold;
@@ -21,16 +21,22 @@
 }
 
 
-#small_menuebar{
-  width: 100vw;
-  height:fit-content;
-  position: fixed;
-  z-index: 99999999;
-  background:rgba(250, 250, 250, 0.10);
-  backdrop-filter: blur(10px);
-  
-  /* this part has a problem whenever i do not use position my div has white background instead of my chosen background*/
-  position: fixed;
+ #small_menuebar{
+     box-sizing: border-box;
+     width: 100vw;
+     height: min-content;
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     padding: 10px 0px 10px 0px;
+     overflow: visible;
+     align-content: center;
+     flex-wrap: nowrap;
+     position: absolute;
+     border-radius: 0px 0px 0px 0px;
+     z-index: 9999999;
+     background: var(--bg-primary-color)
 }  
 
 #small_menuebar ul {

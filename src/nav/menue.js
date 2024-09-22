@@ -5,53 +5,6 @@ import ClearTwoToneIcon from '@mui/icons-material/ClearTwoTone';
 import alx_logo from "./Untitled.png"
 import unilag_logo from './uilaglogo.png'
 import { Menu } from '@mui/icons-material';
-const DropDownMenu = () => {
-  return (
-    <div className="dropdown__wrapper">
-      <div className="dropdown">
-        <ul className="list-items-with-description">
-          <li>
-            <div className="item-title">
-              <h3>Previews</h3>
-              <p>Zero config, more innovation</p>
-            </div>
-          </li>
-          <li>
-            <div className="item-title">
-              <h3>Infrastructure</h3>
-              <p>Always fast always online</p>
-            </div>
-          </li>
-          <li>
-            <div className="item-title">
-              <h3>Next js</h3>
-              <p>The native Next.js platform</p>
-            </div>
-          </li>
-          <li>
-            <div className="item-title">
-              <h3>Edge Functions</h3>
-              <p>Dynamic pages, static speed</p>
-            </div>
-
-          </li>
-          <li>
-            <div className="item-title">
-              <h3>Analytics</h3>
-              <p>Real-time insights, peak performance</p>
-            </div>
-          </li>
-          <li>
-            <div className="item-title">
-              <h3>Storage</h3>
-              <p>Serverless storage for frontend</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  )
-}
 
 const Menue_Bar = ({toggle}) => {
   const [navbarActive, setNavbarActive] = useState(false);
