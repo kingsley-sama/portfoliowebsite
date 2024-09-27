@@ -51,7 +51,18 @@
 	letter-spacing: -0.04em;
 	line-height: 1.2;
   }
-  
+ .circle_img {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 0 4px;
+  border-radius: 50%;
+  background-image: url('/img/Fantasy-Lake2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+}
 #web-mobile-h1 .left-align {
     align-self: flex-start;
 }
@@ -126,7 +137,10 @@
   line-height: 1.4;
 }
 @media (min-width: 766px){
-  
+  .circle_img{
+	height: 70px;
+	width: 70px;
+  }
   .developer-page{
 	height: 100vh;
     display: flex;
@@ -134,7 +148,7 @@
     color: white;
     font-family: Arial, sans-serif;
     background-color: transparent;
-	align-items: center;	
+	align-items: center;
   }
   .content{
 	position: relative;
@@ -144,9 +158,8 @@
 	font-weight: 200px;
 	padding: 20px;
 	margin-bottom: 100px;
-	font-size: 120px;
+	font-size: 130px;
 	width: 80%;
-	
   }
   .content P{
 	position: absolute;

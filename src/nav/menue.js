@@ -1,123 +1,146 @@
 import React, { useState } from 'react';
-import "./menue.css"
-import { Link, useNavigate } from 'react-router-dom';
-import ClearTwoToneIcon from '@mui/icons-material/ClearTwoTone';
-import alx_logo from "./Untitled.png"
-import unilag_logo from './uilaglogo.png'
+import "./menue.css";
+import { Link } from 'react-router-dom';
 import { Menu } from '@mui/icons-material';
+import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
+import unilag_logo from './uilaglogo.png';
 
-const Menue_Bar = ({toggle}) => {
+const Menue_Bar = () => {
   const [navbarActive, setNavbarActive] = useState(false);
-  const [isOpen, setOpen] = useState(false)
+
   const toggleNavbar = () => {
     setNavbarActive(!navbarActive);
   };
-  const set_style = () => {
-    const style = { fontSize: '30px', fontWeight: 'bold', transition: "0.5s ease-in", color: 'grey' }
-    {/*if (toggle) { return (<ClearTwoToneIcon style={style} />) } else { null }*/}
-  }
-  const image_style = {
-    width: '50px',
-    height: '40px',
-    objectFit: 'contain'
-  }
+
+  const closeNavbar = () => {
+    setNavbarActive(false);
+  };
+
   const resources = [
-    {
-      img: null,
-      link: '/',
-      name: 'Home',
-      classname: 'li',
-      id: 1
+    { link: '/', name: 'Home', classname: 'li', id: 1 },
+    { link: '/articles', name: 'Articles', classname: 'li', id: 2 },
+    { link: '/#projects', name: 'Projects', classname: 'li', id: 3 },
+    { link: '/services', name: 'Services', classname: 'li', id: 4 },
+    { link: '/about', name: 'About Me', classname: 'li', id: 5 },
+  ];
+
+  const dropdownVariants = {
+    hidden: { 
+      opacity: 0,
+      y: -50,
+      transition: {
+        type: 'spring',
+        stiffness: 300,
+        damping: 40,
+      }
     },
-    {
-      img: '/img/Screenshot_from_2022-10-09_12-35-09-removebg-preview.png',
-      link: '/articles',
-      name: 'Articles',
-      classname: 'li',
-      id: 2
+    visible: { 
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'spring',
+        stiffness: 300,
+        damping: 30,
+        when: "beforeChildren",
+        staggerChildren: 0.1,
+      }
     },
-    {
-      img: '/img/doge-removebg-preview.png',
-      link: '/#projects',
-      name: 'Projects',
-      classname: 'li',
-      id: 3
+    exit: {
+      opacity: 0,
+      y: -50,
+      transition: {
+        type: 'spring',
+        stiffness: 300,
+        damping: 40,
+        when: "afterChildren",
+        staggerChildren: 0.05,
+        staggerDirection: -1,
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: {
+        type: 'spring',
+        stiffness: 300,
+        damping: 20,
+      }
     },
-    {
-      img: '/milo-removebg-preview.png',
-      link: '/services',
-      name: 'Services',
-      classname: 'li',
-      id: 4
-    },
-    {
-      img: '/milo-removebg-preview.png',
-      link: '/about',
-      name: 'About Me',
-      classname: 'li',
-      id: 5
-    },
-  ]
-  const menu_size = () => {
-    return (
-      true ?
-        { height: '80vh', position: "fixed", top: '0', width: '100vw', minWidth: "320px" } :
-        { height: '0', position: 'fixed', width: '100vw' }
-    )
-  }
+    exit: { 
+      opacity: 0, 
+      x: -20,
+      transition: {
+        type: 'spring',
+        stiffness: 300,
+        damping: 20,
+      }
+    }
+  };
+
   return (
     <>
-      <div className='menuebar_alt'  >
+      <div className='menuebar_alt'>
         <div className='logos'>
-          <img src={alx_logo} alt={alx_logo}></img>
-          <img src={unilag_logo} alt={unilag_logo}></img>
-
+          <h1 className='kingsley'>Kingsley</h1>
         </div>
-        <ul>
-          {
-            resources.map((rec) => {
-              return (
-                <li key={rec.id}><a className={rec.classname} key={rec.id} href={rec.link}>
-                  {rec.name}
-                </a></li>
-              )
-            })
-          }
+        <ul className="hover-box-list">
+          {resources.map((rec) => (
+            <li key={rec.id}>
+              <Link className={rec.classname} to={rec.link}>
+                {rec.name}
+              </Link>
+            </li>
+          ))}
         </ul>
-
       </div>
-
-      <div id='small_menuebar'  >
-
-        <div>
-          <div onClick={toggleNavbar} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255, 255, 255, 0.3)', background: 'transparent' }}>
-            <Menu toggled={isOpen} toggle={setOpen}  />
-          </div>
-          <div className={`dropdown${navbarActive ? ' open' : ''}`}>
-
-            <ul className='dropdown_ul'>
-              {
-                resources.map((rec) => {
-                  return (
-                    <li key={rec.id}><Link className={rec.classname} key={rec.id} to={rec.link}>
-                      {rec.name}
-                    </Link></li>
-                  )
-                })
-              }
-            </ul>
-            <div>
-              <img src={alx_logo} alt={alx_logo}></img>
-              <img src={unilag_logo} alt={unilag_logo}></img>
-
-            </div>
-
-          </div>
-
-        </div>
+      <div id='small_menuebar'>
+        <h1 className='kingsley'>Kingsley</h1>
+        <motion.div 
+          onClick={toggleNavbar} 
+          className='menu-icon'
+          whileTap={{ scale: 0.9 }}
+        >
+          <Menu />
+        </motion.div>
       </div>
-
+      <AnimatePresence>
+        {navbarActive && (
+          <motion.div 
+            className="dropdown"
+            variants={dropdownVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            style={{ display: navbarActive ? 'block' : 'none' }}
+          >
+            <motion.ul className='dropdown_ul'>
+              {resources.map((rec) => (
+                <motion.li key={rec.id} variants={itemVariants}>
+                  <Link 
+                    className={rec.classname} 
+                    to={rec.link} 
+                    onClick={closeNavbar}
+                  >
+                    {rec.name}
+                  </Link>
+                </motion.li>
+              ))}
+            </motion.ul>
+            <motion.div 
+              className="dropdown-logo"
+              variants={itemVariants}
+            >
+              <img src={unilag_logo} alt="Unilag Logo" />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
-  )
-}
-export { Menue_Bar }
+  );
+};
+
+export { Menue_Bar };

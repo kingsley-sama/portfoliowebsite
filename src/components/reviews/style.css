@@ -1,0 +1,117 @@
+.service-page {
+  width: 85%;
+  align-self: center;
+  justify-self: center;
+  margin-top: 100px;
+  color: var(--txt-primary-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+	align-items: center;
+	gap: 30px;
+}
+
+.service-page h1 {
+    font-size: 5.5rem;
+    margin-bottom: 20px;
+}
+
+.service-page p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.service-img {
+    background:url('/assets/myimage_2.jpg');
+    background-size: cover;
+    background-position: top;
+	opacity: 0.8;
+    width: 40%;
+	border-radius: 10px;
+	min-height: 200px;
+	min-width: 350px;
+    height: 400px; /* Adjust based on your needs */
+}
+.service-img_overlay{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.service-img_overlay button{
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  border: none;
+  transition: ease 0.5s;
+}
+.service-img_overlay button:hover{
+  height: 100px;
+  width: 100px;
+
+}
+@media (max-width: 768px) {
+    .service-page {
+        flex-direction: column;
+	}
+	.service-img{
+	  width: 80%;
+	}
+}
+/****/
+.video_player-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.5);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 56rem;
+  aspect-ratio: 16 / 9;
+  background-color: black;
+}
+
+.close-button {
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #d1d5db;
+}
+
+.video-player {
+  width: 100%;
+  height: 100%;
+}

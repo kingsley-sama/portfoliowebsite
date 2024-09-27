@@ -5,6 +5,11 @@ import { Menue_Bar } from './nav/menue';
 import { ProductCard } from './components/projects';
 import ProjectItem from "./components/projects";
 import DownBar from './root/bottom_bar';
+import HorizontalScroll from './components/Animations';
+import AboutMe from './components/reviews/reviews';
+import AboutNe from './components/our_team';
+import ArticleSample from './components/blogcard/bob';
+import Services from './components/reviews';
 function App() {
   const [toggle, setToggle] = useState(false);
   const [isDownBarInView, setDownBarInView] = useState(false);
@@ -13,7 +18,7 @@ function App() {
       <Router >
         <Menue_Bar toggle={toggle} />
         <Routes>
-          <Route path="/" element={<><DeveloperPage /><ProjectsPage></ProjectsPage> <Articles /></>} />
+          <Route path="/" element={<><DeveloperPage /><ProjectsPage></ProjectsPage> <AboutMe /><Articles /><Services /><ArticleSample /><HorizontalScroll direction='right' speed={0.1}/> </> } />
         </Routes>
         <DownBar />
       </Router>
@@ -29,7 +34,7 @@ const DeveloperPage = () => {
      <div className="developer-page">
        <div className="content">
          <h1 id="web-mobile-h1">
-           <span className="left-align">Web & Mobile</span>
+           <span className="left-align">Web & M<div className='circle_img'></div>bile</span>
            <span className="right-align">DEVELOPER</span>
          </h1>
         <p>Full Stack Developer With 3<br />plus years of experience</p>
@@ -47,7 +52,6 @@ const ProjectsPage = ()=> {
   return (
     <div className="project-item-container">
       <h1 className='project-item-header'>Projects</h1>
-      <ProjectItem />
       <ProjectItem />
       <ProjectItem />
       <ProjectItem />

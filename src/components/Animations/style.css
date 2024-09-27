@@ -1,5 +1,8 @@
 /* HorizontalScroll.css */
 .scroll-container {
+  margin-top: 100px;
+  margin: 20px;
+  margin-bottom:100px;
   overflow-x: hidden;
   white-space: nowrap;
   width: 100%;
@@ -10,25 +13,35 @@
   display: flex;
   transform: translate3d(0, 0, 0);
   will-change: transform;
-
 }
 
 .header78_image-list {
   display: flex;
+  gap: 60px;
 }
 
 .header78_image-wrapper {
-  flex-shrink: 0;
-  margin-right: 10px;
+  height: 80px;
+  min-width: 80px;
+  width: 80px;
+  background-color: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 15px;
 }
 
 .header78_image {
   display: block;
-  max-width: 200px;
-  max-height: 150px;
-  height: auto;
+  height: 80%;
+  width: 80%;
   margin: 10px;
   border: 3px solid white;
+  filter: grayscale(100%);
+  border-radius: 15px;
+  transition: filter 0.3s ease;
+}
+.header78_image:hover{
+  filter: grayscale(0%);
 }
 
 .w-background-video {
