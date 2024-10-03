@@ -64,54 +64,68 @@
 	  width: 80%;
 	}
 }
-/****/
-.video_player-container{
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0,0,0,0.5);
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/* ... (keep your existing styles for .service-page, .service-img, etc.) ... */
+
 .video-overlay {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9); /* Increased opacity for better coverage */
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 50;
+  z-index: 9999999; /* Ensure it's above other content */
 }
 
 .video-container {
   position: relative;
-  width: 100%;
-  max-width: 56rem;
+  width: 80%; /* Increased from 50% for better visibility */
+  max-width: 1000px; /* Set a max-width to prevent it from becoming too large */
   aspect-ratio: 16 / 9;
   background-color: black;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for depth */
 }
 
 .close-button {
   position: absolute;
-  top: -2.5rem;
-  right: 0;
+  top: -40px;
+  right: -40px;
   color: white;
   background: none;
   border: none;
   cursor: pointer;
+  font-size: 24px;
+  z-index: 1001; /* Ensure it's above the video */
 }
 
 .close-button:hover {
   color: #d1d5db;
 }
 
-.video-player {
+.video-player-wrapper {
   width: 100%;
   height: 100%;
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.video-iframe {
+  width: 100%;
+  height: 100%;
+  border: none; /* Remove iframe border */
+}
+
+/* Remove or comment out this class as it's no longer needed */
+/* .video_player-container { ... } */
+
+@media (max-width: 768px) {
+  .video-container {
+    width: 95%; /* Full width on mobile */
+  }
+  
+  .close-button {
+    top: -40px;
+    right: 0;
+  }
 }

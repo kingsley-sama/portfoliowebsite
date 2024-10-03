@@ -10,20 +10,24 @@ import AboutMe from './components/reviews/reviews';
 import AboutNe from './components/our_team';
 import ArticleSample from './components/blogcard/bob';
 import Services from './components/reviews';
+import PreLoader from "./components/preloader";
+import ProjectDetails from './components/projects/main';
 function App() {
   const [toggle, setToggle] = useState(false);
   const [isDownBarInView, setDownBarInView] = useState(false);
   return (
     <div className='App'>
       <Router >
-        <Menue_Bar toggle={toggle} />
         <Routes>
-          <Route path="/" element={<><DeveloperPage /><ProjectsPage></ProjectsPage> <AboutMe /><Articles /><Services /><ArticleSample /><HorizontalScroll direction='right' speed={0.1}/> </> } />
+          <Route path="/" element={<><Menue_Bar toggle={toggle} /><DeveloperPage /><ProjectsPage></ProjectsPage> <AboutMe /><Articles /><Services /><ArticleSample /><HorizontalScroll direction='right' speed={0.1}/><PreLoader /> </> } />
+          < Route path="/preload" element={<PreLoader />} />
+          <Route path="/project/:project_id" element={<ProjectDetails />} />
         </Routes>
         <DownBar />
       </Router>
       
-    </div>                                                                                                                                 )
+    </div>
+      )
 }
 
 export default App;
