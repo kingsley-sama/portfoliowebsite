@@ -26,6 +26,5 @@ body {
   display: grid;
   width: 100vw;
   overflow-x: hidden;
-  background-color: black;
   place-items: center;
 }

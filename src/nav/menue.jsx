@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "./menue.css";
 import { Link } from 'react-router-dom';
 import { Menu } from '@mui/icons-material';
-import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
+import {AnimatePresence, motion} from 'framer-motion'
 import unilag_logo from './uilaglogo.png';
 
 const Menue_Bar = () => {

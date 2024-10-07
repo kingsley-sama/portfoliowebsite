@@ -2,15 +2,14 @@ import './style.css'
 import React, { useState, useEffect } from 'react';
 const PreLoader = () => {
   return (
-    <div className={'preloading-page'}>
+    <div className='preloading-page' id='loading-page'>
       <CircularPreloader />
     </div>
   )
 }
 const CircularPreloader = () => {
 
-  useEffect(() => {
-  }, []);
+
 
   return (
     <div className="preloader-container">

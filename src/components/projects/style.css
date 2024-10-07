@@ -5,7 +5,7 @@
   background-color: var(--bg-primary-color);
   color: white;
   background-color: #272727;
-  position: sticky;
+  position: relative;
   top: 0;
   padding: 0px;
   font-family: Arial, sans-serif;
@@ -105,7 +105,7 @@
 	width: 80%;
 	min-width: 850px;
 	min-height: 400px;
-	position: sticky;
+	position: relative;
 	top: 0;
 	border-radius: 10px;
 	font-family: Arial, sans-serif;

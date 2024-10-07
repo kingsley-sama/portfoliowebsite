@@ -13,8 +13,8 @@
   justify-content: space-between;
   align-items: center;
   font-weight: bold;
-  backdrop-filter: blur(10px);
-  z-index: 99999999;
+  background-color: var(--bg-primary-color);
+  z-index: 999999999;
 }
 
 /* Hover Box List and Menubar Alt Combined */
@@ -24,7 +24,9 @@
   align-items: center;
   gap: 20px;
   padding: 0;
+  padding-right: 40px;
   margin: 0;
+  margin-right: 30px;
 }
 
 .menuebar_alt ul.hover-box-list li {
@@ -72,16 +74,16 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: 9999999;
-  background: var(--txt-primary-color);
+  z-index: 9999999999;
 }
 
 @media (max-width: 768px) {
   #small_menuebar {
     display: flex;
+	background-color: var(--bg-primary-color);
   }
 }
 /* Dropdown for Small Menu Bar */
@@ -99,7 +101,7 @@
 
 .dropdown.open {
   display: flex;
-  z-index: 99999999999;
+  z-index: 999999999;
   height: 500px;
 }
 
