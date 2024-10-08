@@ -11,7 +11,6 @@
   margin: 0;
   height: 500px;
   width: 100vw;
-  border-top: 1px solid var(--txt-primary-color);
   gap: 150px;
 }
 .collab-container {
@@ -32,10 +31,33 @@ h1.collab-heading {
   text-decoration: none;
   margin-right: 15px;
   font-size: 1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  }
+.collab-links .hover  a{
+  position: relative;
+  padding-left: 40px;
+  color: var(--txt-primary-color);
+  font-size: 18px;
+}
+
+.hovered::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  transition: width 0.3s ease, height 0.3s ease;
+  width: 40px;
+  height: 4px;
+  background-color: var(--txt-primary-color);
 }
 .collab-links a:hover {
-  text-decoration: underline;
+  color: var(--txt-primary-color);
+  transform: translateX(10px);
 }
+
 .circle {
   width: 200px;
   height: 200px;
@@ -49,6 +71,7 @@ h1.collab-heading {
   animation: rotateArrow 2s ease-in-out infinite;
   transition: background-color 0.5s ease;
 }
+
 .arrow {
   color: var(--txt-primary-color);
   animation: rotateArrow 2s ease-in-out infinite;
@@ -67,6 +90,7 @@ h1.collab-heading {
 .circle:hover .arrow {
   opacity: 0;
 }
+
 .circle:hover .hire-me {
   opacity: 1;
 }
@@ -101,7 +125,7 @@ footer {
   font-size: 24px;
   font-weight: normal;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
+} 
 
 .divider {
   height: 3px;
@@ -113,4 +137,20 @@ footer {
   font-size: 18px;
   color: #888888;
   text-align: right;
+}
+@media only screen and (max-width: 768px) {
+  .lets-collaborate{
+	flex-direction: column;
+	gap: 20px;
+	margin-bottom: 0px;
+	height: fit-content;
+  }
+  h1.collab-heading{
+	font-size: 3rem;
+  }
+  .logo {
+	font-size: 18px;
+	font-weight:normal;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  } 
 }

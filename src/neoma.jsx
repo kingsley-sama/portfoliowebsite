@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom"
@@ -32,7 +31,7 @@ export default function NeomaLandingPage() {
     const counterElement = counterRef.current;
     const kingsElement = kingsRef.current;
     const workElement = workRef.current;
-    
+
     let currentValue = 0;
     const updateInterval = 30; // Faster updates for smoother animation
     const maxDuration = 2000;
@@ -41,7 +40,7 @@ export default function NeomaLandingPage() {
 
     const updateCounter = () => {
       const elapsedTime = Date.now() - startTime;
-      
+
       if (elapsedTime < maxDuration) {
         currentValue = Math.min(
           Math.floor((elapsedTime / maxDuration) * endValue),
@@ -142,26 +141,29 @@ export default function NeomaLandingPage() {
           <div className="overlay" ref={overlayRef}></div>
         </section>
       </div>
-      
+
       <div className="scrollable-content">
         <div className='App'>
           <Router>
             <Routes>
               <Route path="/" element={
-                <div>
-                  <Menue_Bar/>
-                  <DeveloperPage/>
-                  <ProjectsPage/>
-                  <AboutMe/>
-                  <Articles/>
-                  <Services/>
-                  <ArticleSample/>
-                  <HorizontalScroll direction='right' speed={0.1}/>
-                </div>
-              }/>
-              <Route path="/project/:project_id" element={<ProjectDetails/>}/>
+                <>
+                  <Menue_Bar />
+                  <DeveloperPage />
+                  <div className='body-items-container'>
+                    <ProjectsPage />
+                    <AboutMe />
+                    <Articles />
+                    <Services />
+                    <div className='article_wrapper'><ArticleSample /><ArticleSample /><ArticleSample /></div>
+
+                    <HorizontalScroll direction='right' speed={0.1} />
+                  </div>
+                </>
+              } />
+              <Route path="/project/:project_id" element={<ProjectDetails />} />
             </Routes>
-            <DownBar/>
+            <DownBar />
           </Router>
         </div>
       </div>
@@ -172,13 +174,12 @@ const DeveloperPage = () => {
   const headerRef = useRef(null);
   const paragraphRef = useRef(null);
   const imageRef = useRef(null);
-
   useLayoutEffect(() => {
     gsap.from(headerRef, {
       x: '-200px',
-      opacity:0
+      opacity: 0
     })
-  }, []); 
+  }, []);
   return (
     <div className="developer-page">
       <div className="content">
@@ -186,11 +187,11 @@ const DeveloperPage = () => {
           <span className="left-align">Web & M<div className='circle_img'></div>bile</span>
           <span className="right-align">DEVELOPER</span>
         </h1>
-        <p ref={paragraphRef} >Full Stack Developer With 3<br/>plus years of experience</p>
+        <p ref={paragraphRef} >Full Stack Developer With 3<br />plus years of experience</p>
       </div>
       <div className="image-section" ref={imageRef}>
         <div className="image-overlay">
-          <button id='hover_button'>Hover <br/> Here</button>
+          <button id='hover_button'>Hover <br /> Here</button>
         </div>
       </div>
     </div>
@@ -205,6 +206,7 @@ const ProjectsPage = () => {
       <h1 className='project-item-header'>Projects</h1>
       <div >
         <ProjectItem />
+        
       </div>
     </div>
   );
@@ -220,7 +222,7 @@ const Articles = () => {
   return (
     <div className="project-item-container">
       <h1 className='project-item-header'>Projects</h1>
-      <ProductCard/>
+      <ProductCard />
     </div>
   );
 };

@@ -14,7 +14,7 @@
   align-items: center;
   font-weight: bold;
   background-color: var(--bg-primary-color);
-  z-index: 999999999;
+  z-index: 3;
 }
 
 /* Hover Box List and Menubar Alt Combined */
@@ -77,7 +77,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 9999999999;
+  z-index:3;
 }
 
 @media (max-width: 768px) {

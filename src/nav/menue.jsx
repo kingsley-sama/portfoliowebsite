@@ -7,15 +7,12 @@ import unilag_logo from './uilaglogo.png';
 
 const Menue_Bar = () => {
   const [navbarActive, setNavbarActive] = useState(false);
-
   const toggleNavbar = () => {
     setNavbarActive(!navbarActive);
   };
-
   const closeNavbar = () => {
     setNavbarActive(false);
   };
-
   const resources = [
     { link: '/', name: 'Home', classname: 'li', id: 1 },
     { link: '/articles', name: 'Articles', classname: 'li', id: 2 },
