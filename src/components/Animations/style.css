@@ -1,3 +1,79 @@
+/* General container styling */
+.tech-stacks-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Main heading */
+.tech-stacks-heading {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: var(--text-primary-color);
+}
+
+/* Section headings (ul headers) */
+.tech-stacks-subheading {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--text-primary-color);
+  padding-bottom: 8px;
+  text-transform: uppercase;
+}
+
+/* UL list styles */
+.tech-stack-list {
+  list-style-type: none;
+  padding: 0;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* LI (tech stacks items) styles */
+.tech-stack-item {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: var(--text-primary-color);
+  padding: 8px 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Hover effect on li */
+.tech-stack-item:hover {
+  cursor: pointer;
+  color: #666;
+}
+
+/* Hover effect on UL */
+.tech-stack-list:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive design: ensure space between items on smaller screens */
+@media (max-width: 768px) {
+  .tech-stacks-wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .tech-stacks-heading {
+    font-size: 1.8rem;
+  }
+
+  .tech-stacks-subheading {
+    font-size: 1.3rem;
+  }
+
+  .tech-stack-item {
+    font-size: 1rem;
+  }
+}
+
 /* HorizontalScroll.css */
 .scroll-container {
   margin: 20px;

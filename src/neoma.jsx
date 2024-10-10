@@ -5,7 +5,7 @@ import { Menue_Bar } from './nav/menue';
 import { ProductCard } from './components/projects';
 import ProjectItem from "./components/projects";
 import DownBar from './root/bottom_bar';
-import HorizontalScroll from './components/Animations';
+import HorizontalScroll, { TechStacks } from './components/Animations';
 import AboutMe from './components/reviews/reviews';
 import AboutNe from './components/our_team';
 import ArticleSample from './components/blogcard/bob';
@@ -16,7 +16,7 @@ import PreLoader from './components/preloader';
 import ReactLenis from '@studio-freight/react-lenis';
 import ProjectDetails from './components/projects/main';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
+import { useGSAP } from '@gsap/react'; 
 gsap.registerPlugin(CustomEase, ScrollTrigger);
 export default function NeomaLandingPage() {
   const counterRef = useRef(null);
@@ -26,7 +26,6 @@ export default function NeomaLandingPage() {
   const workRef = useRef(null);
   const containerRef = useRef(null);
   const [animationComplete, setAnimationComplete] = useState(false);
-
   const animateCounter = () => {
     const counterElement = counterRef.current;
     const kingsElement = kingsRef.current;
@@ -129,25 +128,27 @@ export default function NeomaLandingPage() {
 
   return (
     <ReactLenis root>
-      <div ref={containerRef} className="container">
-        <div className="counter">
-          <div>
-            <p ref={workRef} className='work'>Web.Mobile.Dev</p>
-            <h1 ref={kingsRef} className='kings'>KINGSLEY.OKPO</h1>
-            <p className='counter-text' ref={counterRef}>0%</p>
-          </div>
-        </div>
-        <section className="hero" ref={heroRef}>
-          <div className="overlay" ref={overlayRef}></div>
-        </section>
-      </div>
+    
 
       <div className="scrollable-content">
         <div className='App'>
           <Router>
             <Routes>
               <Route path="/" element={
-                <>
+                <div>
+                  <div ref={containerRef} className="container">
+                    <div className="counter">
+                      <div>
+                        <p ref={workRef} className='work'>Web.Mobile.Dev</p>
+                        <h1 ref={kingsRef} className='kings'>KINGSLEY.OKPO</h1>
+                        <p className='counter-text' ref={counterRef}>0%</p>
+                      </div>
+                    </div>
+                    <section className="hero" ref={heroRef}>
+                      <div className="overlay" ref={overlayRef}></div>
+                    </section>
+                  </div>
+                  <>
                   <Menue_Bar />
                   <DeveloperPage />
                   <div className='body-items-container'>
@@ -156,10 +157,10 @@ export default function NeomaLandingPage() {
                     <Articles />
                     <Services />
                     <div className='article_wrapper'><ArticleSample /><ArticleSample /><ArticleSample /></div>
-
-                    <HorizontalScroll direction='right' speed={0.1} />
+                    <TechStacks/>
                   </div>
                 </>
+                </div>
               } />
               <Route path="/project/:project_id" element={<ProjectDetails />} />
             </Routes>
@@ -197,8 +198,93 @@ const DeveloperPage = () => {
     </div>
   );
 };
+gsap.registerPlugin(ScrollTrigger);
 
 const ProjectsPage = () => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    
+     ScrollTrigger.create({
+      trigger: container,
+       start: "top top", // When the container hits the center of the viewport
+      onEnter: () => {
+        gsap.to(container, {
+          backgroundColor: '#d3d3d3', // Your desired background color
+          duration: 1,
+          ease: 'power2.inOut'
+        });
+      },
+      onLeaveBack: () => {
+        gsap.to(container, {
+          backgroundColor: 'initial', // Or your original background color
+          duration: 3,
+          ease: 'power2.inOut'
+        });
+      }
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
+  return (
+    <div ref={containerRef} className="project-item-container">
+      <h1 className='project-item-header'>Projects</h1>
+      <div>
+        <ProjectItem />
+      </div>
+    </div>
+  );
+};
+const PrjectsPage = () => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    
+    // Get the parent element where we'll apply the background change
+    // This is typically the body or a main wrapper of your site
+    const bodyElement = document.documentElement;
+    
+    ScrollTrigger.create({
+      trigger: container,
+      start: "top 5%", // When the top of the container is 5% from the top of the viewport
+      end: "bottom 5%", // When the bottom of the container is 5% from the top of the viewport
+      onEnter: () => {
+        gsap.to(bodyElement, {
+          backgroundColor: '#d3d3d3', // Your desired background color
+          duration: 0.8,
+          ease: 'power2.inOut'
+        });
+      },
+      onLeaveBack: () => {
+        gsap.to(bodyElement, {
+          backgroundColor: 'initial', // Or your original background color
+          duration: 0.8,
+          ease: 'power2.inOut'
+        });
+      },
+      markers: false // Set to true for debugging
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
+  return (
+    <div ref={containerRef} className="project-item-container">
+      <h1 className='project-item-header'>Projects</h1>
+      <div>
+        <ProjectItem />
+      </div>
+    </div>
+  );
+};
+const rojectsPage = () => {
 
   return (
 
