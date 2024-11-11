@@ -17,6 +17,7 @@ import ReactLenis from '@studio-freight/react-lenis';
 import ProjectDetails from './components/projects/main';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react'; 
+import { delay } from 'framer-motion';
 gsap.registerPlugin(CustomEase, ScrollTrigger);
 export default function NeomaLandingPage() {
   const counterRef = useRef(null);
@@ -26,11 +27,12 @@ export default function NeomaLandingPage() {
   const workRef = useRef(null);
   const containerRef = useRef(null);
   const [animationComplete, setAnimationComplete] = useState(false);
+  const [showAnimation, setShowAnimation] = useState(false);
+  const [animationDone, setAnimationDone] = useState(false);
   const animateCounter = () => {
     const counterElement = counterRef.current;
     const kingsElement = kingsRef.current;
     const workElement = workRef.current;
-
     let currentValue = 0;
     const updateInterval = 30; // Faster updates for smoother animation
     const maxDuration = 2000;
@@ -118,18 +120,16 @@ export default function NeomaLandingPage() {
   };
 
   useEffect(() => {
-    // Start the counter animation after a short delay
-    const timer = setTimeout(() => {
-      animateCounter();
-    }, 500);
-
-    return () => clearTimeout(timer);
+    const hasPlayed = sessionStorage.getItem('animationPlayed');
+    if (!hasPlayed) {
+      // If the animation hasn't played yet, set the flag and show the animation
+      // setShowAnimation(true);
+      sessionStorage.setItem('animationPlayed', 'true');
+    }
+    animateCounter()
   }, []);
-
   return (
     <ReactLenis root>
-    
-
       <div className="scrollable-content">
         <div className='App'>
           <Router>
@@ -147,21 +147,30 @@ export default function NeomaLandingPage() {
                     <section className="hero" ref={heroRef}>
                       <div className="overlay" ref={overlayRef}></div>
                     </section>
+                    
                   </div>
-                  <>
-                  <Menue_Bar />
-                  <DeveloperPage />
-                  <div className='body-items-container'>
-                    <ProjectsPage />
-                    <AboutMe />
-                    <Articles />
-                    <Services />
-                    <div className='article_wrapper'><ArticleSample /><ArticleSample /><ArticleSample /></div>
-                    <TechStacks/>
-                  </div>
-                </>
+                  {animationComplete ? (
+                    <>
+                      <Menue_Bar />
+                      <DeveloperPage />
+                      <div className='body-items-container'>
+                        <ProjectsPage />
+                        <AboutMe />
+                        <Articles />
+                        <Services />
+                        <div className='article_wrapper'>
+                          <ArticleSample />
+                          <ArticleSample />
+                          <ArticleSample />
+                        </div>
+                        <TechStacks />
+                      </div>
+                    </>
+                  ) : (
+                    <div className='loading-screen'>Loading Animation...</div>
+      )}
                 </div>
-              } />
+              }/>
               <Route path="/project/:project_id" element={<ProjectDetails />} />
             </Routes>
             <DownBar />
@@ -172,23 +181,50 @@ export default function NeomaLandingPage() {
   );
 }
 const DeveloperPage = () => {
-  const headerRef = useRef(null);
-  const paragraphRef = useRef(null);
+  const contentRef = useRef(null);
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
   const imageRef = useRef(null);
-  useLayoutEffect(() => {
-    gsap.from(headerRef, {
-      x: '-200px',
-      opacity: 0
-    })
+
+  useEffect(() => {
+    const elements = [
+      titleRef.current,
+      subtitleRef.current,
+      imageRef.current
+    ];
+
+    // Set initial states
+    gsap.set(elements, { x: -100, autoAlpha: 0 });
+
+    // Create animation timeline
+    const tl = gsap.timeline({
+      delay: 0.8}
+    );
+    
+    // Animate elements sequentially
+    elements.forEach((element, index) => {
+      tl.to(element, {
+        x: 0,
+        autoAlpha: 1,
+        duration: 1.5,
+        ease: "power3.out",
+        delay: index === 0 ? 0 : 0.5 // Small delay between elements
+      }, index * 0.3); // Stagger the animations
+    });
+
+    return () => {
+      tl.kill();
+    };
   }, []);
+
   return (
     <div className="developer-page">
-      <div className="content">
-        <h1 id="web-mobile-h1" ref={headerRef}  >
+      <div className="content" ref={contentRef}>
+        <h1 id="web-mobile-h1" ref={titleRef}>
           <span className="left-align">Web & M<div className='circle_img'></div>bile</span>
           <span className="right-align">DEVELOPER</span>
         </h1>
-        <p ref={paragraphRef} >Full Stack Developer With 3<br />plus years of experience</p>
+        <p ref={subtitleRef}>Full Stack Developer With 3<br />plus years of experience</p>
       </div>
       <div className="image-section" ref={imageRef}>
         <div className="image-overlay">
@@ -198,6 +234,55 @@ const DeveloperPage = () => {
     </div>
   );
 };
+// export const DeveloperPage = () => {
+//   const pageRef = useRef(null);
+//   const contentRef = useRef(null);
+//   const imageRef = useRef(null);
+
+//   useEffect(() => {
+//     const page = pageRef.current;
+//     const content = contentRef.current;
+//     const image = imageRef.current;
+
+//     gsap.set(page, { autoAlpha: 0, scale: 0.9 });
+//     gsap.set(content, { y: 50, autoAlpha: 0 });
+//     gsap.set(image, { scale: 1.2, autoAlpha: 0.9});
+
+//     const tl = gsap.timeline({
+//       scrollTrigger: {
+//         trigger: page,
+//         start: "top center",
+//         end: "bottom center",
+//         scrub: 1,
+//       }
+//     });
+
+//     tl.to(page, { autoAlpha: 1, scale: 1, duration: 1, ease: "power3.out" })
+//       .to(content, { y: 0, autoAlpha: 1, duration: 1, ease: "power3.out" }, "-=0.5")
+//       .to(image, { scale: 1, autoAlpha: 1, duration: 1, ease: "power3.out" }, "-=0.5");
+
+//     return () => {
+//       tl.kill();
+//     };
+//   }, []);
+
+//   return (
+//     <div className="developer-page" ref={pageRef}>
+//       <div className="content" ref={contentRef}>
+//         <h1 id="web-mobile-h1">
+//           <span className="left-align">Web & M<div className='circle_img'></div>bile</span>
+//           <span className="right-align">DEVELOPER</span>
+//         </h1>
+//         <p>Full Stack Developer With 3<br />plus years of experience</p>
+//       </div>
+//       <div className="image-section" ref={imageRef}>
+//         <div className="image-overlay">
+//           <button id='hover_button'>Hover <br /> Here</button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 gsap.registerPlugin(ScrollTrigger);
 
 const ProjectsPage = () => {
@@ -239,71 +324,6 @@ const ProjectsPage = () => {
     </div>
   );
 };
-const PrjectsPage = () => {
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    
-    // Get the parent element where we'll apply the background change
-    // This is typically the body or a main wrapper of your site
-    const bodyElement = document.documentElement;
-    
-    ScrollTrigger.create({
-      trigger: container,
-      start: "top 5%", // When the top of the container is 5% from the top of the viewport
-      end: "bottom 5%", // When the bottom of the container is 5% from the top of the viewport
-      onEnter: () => {
-        gsap.to(bodyElement, {
-          backgroundColor: '#d3d3d3', // Your desired background color
-          duration: 0.8,
-          ease: 'power2.inOut'
-        });
-      },
-      onLeaveBack: () => {
-        gsap.to(bodyElement, {
-          backgroundColor: 'initial', // Or your original background color
-          duration: 0.8,
-          ease: 'power2.inOut'
-        });
-      },
-      markers: false // Set to true for debugging
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
-
-  return (
-    <div ref={containerRef} className="project-item-container">
-      <h1 className='project-item-header'>Projects</h1>
-      <div>
-        <ProjectItem />
-      </div>
-    </div>
-  );
-};
-const rojectsPage = () => {
-
-  return (
-
-    <div className="project-item-container">
-      <h1 className='project-item-header'>Projects</h1>
-      <div >
-        <ProjectItem />
-        
-      </div>
-    </div>
-  );
-};
-
-const ForwardedProjectItem = React.forwardRef((props, ref) => (
-  <ProjectItem {...props} forwardedRef={ref} />
-));
-
-
-
 const Articles = () => {
   return (
     <div className="project-item-container">

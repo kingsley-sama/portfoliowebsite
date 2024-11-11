@@ -188,6 +188,7 @@ img {
   z-index: 2;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
+
 @media only screen and (max-width: 768px) {
   .kings{
 	font-size: 25px;
@@ -210,7 +211,6 @@ img {
 }
 .App{
   width: 100vw;
- 
   display: block;
   background-color: #0c0c0c;
   overflow: hidden;
@@ -235,6 +235,8 @@ img {
   width: 100%;
   padding: 0px;
   padding-left: 0;
+  max-height: 70vh;
+  
   padding-right: 0;
 }
 
@@ -267,6 +269,7 @@ img {
   background-position: center;
   vertical-align: middle;
 }
+
 #web-mobile-h1 .left-align {
   align-self: flex-start;
 }
@@ -281,10 +284,13 @@ p {
 
 .image-section {
   height: 30vh;
-  background-image: url('/assets/banner.png');
+  background-image: url('/projects_images/linkedin_banner.png');
+  border-radius: 10px;
   background-size: cover;
+  max-height: 150px;
+  min-height: 150px;
   background-position: center;
-  width: 90%;
+  width: 95%;
   display: flex;
   justify-content: center;
   align-itemes: center;
@@ -293,8 +299,9 @@ p {
 .image-overlay {
   height: 100%;
   width: 100%;
-  background-color: rgba(0,0,0, 0.7);
+  background-color: rgba(0,0,0, 0.4);
   position: relative;
+  border-radius: 30px;
 }
 
 #hover_button {
@@ -375,4 +382,9 @@ p {
 	top: 40%;
 	right: 10%;
   }
+  .image-section{
+  min-height: 300px;
+  max-height: 300px;
+  width: 90%;
+}
 }

@@ -125,9 +125,9 @@ const ProjectDetails = () => {
     navigate(-1);
   };
 
-  if (!project) {
-    return <div>Project not found</div>;
-  }
+  // if (!project) {
+  //   return <div>Project not found</div>
+  // }
 
   return (
     <>
