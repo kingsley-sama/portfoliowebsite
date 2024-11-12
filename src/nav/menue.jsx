@@ -56,10 +56,11 @@ const Menue_Bar = () => {
         <div className="menu-overlay-bar">
           <div className='menu-logo'>
             <Link className='kingsley'>Kinsgley</Link>
-            <div className="menu-close-icon" onClick={toggleNavbar}>
-              <p>&#x2715;</p>
-            </div>
           </div>
+          <div className='menu-close' onClick={toggleNavbar}>
+            <p>close</p>
+          </div>
+
         </div>
         <div className="menu-copy">
           <div className='menu-links'>
@@ -79,11 +80,10 @@ const Menue_Bar = () => {
               <a href="#">GitHub</a>
               <a href="#">Figma</a>
             </div>
-
-            <div className="menu-info-col">
-              <p>info@codegrid.com</p>
-              <p>2342 232 343</p>
-            </div>
+            {/* <div className="menu-info-col"> */}
+            {/*   <p>admin@techwithking.com</p> */}
+            {/*   <p>234 913511 7464</p> */}
+            {/* </div> */}
           </div>
         </div>
         <div className="menu-preview">
