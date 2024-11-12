@@ -80,10 +80,6 @@ const Menue_Bar = () => {
               <a href="#">GitHub</a>
               <a href="#">Figma</a>
             </div>
-            {/* <div className="menu-info-col"> */}
-            {/*   <p>admin@techwithking.com</p> */}
-            {/*   <p>234 913511 7464</p> */}
-            {/* </div> */}
           </div>
         </div>
         <div className="menu-preview">
