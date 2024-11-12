@@ -1,0 +1,171 @@
+.service-page {
+  width: 70%;
+  align-self: center;
+  justify-self: center;
+  margin-top: 150px;
+  color: var(--txt-primary-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  align-items: center;
+  margin-bottom: 150px;
+  gap: 30px;
+}
+
+.service-page h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.service-page p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.service-img {
+    background:url('/img/software_services.png');
+    background-size: cover;
+    background-position: top;
+	opacity: 0.8;
+    width: 40%;
+	border-radius: 10px;
+	max-height: 200px;
+	min-width: 350px;
+    height: 200px; /* Adjust based on your needs */
+}
+.service-img_overlay{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.service-img_overlay button{
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  border: none;
+  transition: ease 0.5s;
+}
+.service-img_overlay button:hover{
+  height: 100px;
+  width: 100px;
+
+}
+@media (max-width: 768px) {
+    .service-page {
+        flex-direction: column;
+	}
+	.service-img{
+	  width: 80%;
+	}
+}
+/* ... (keep your existing styles for .service-page, .service-img, etc.) ... */
+
+.video-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9); /* Increased opacity for better coverage */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999999; /* Ensure it's above other content */
+}
+
+.video-container {
+  position: relative;
+  width: 80%; /* Increased from 50% for better visibility */
+  max-width: 1000px; /* Set a max-width to prevent it from becoming too large */
+  aspect-ratio: 16 / 9;
+  min-height: 400px;
+  z-index: 99999999;
+  background-color: black;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for depth */
+}
+
+.close-button {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 99999999; /* Ensure it's above the video */
+}
+
+.close-button:hover {
+  color: #d1d5db;
+}
+
+.video-player-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.video-iframe {
+  width: 100%;
+  height: 100%;
+  border: none; /* Remove iframe border */
+  z-index: 99999999;
+}
+
+/* Remove or comment out this class as it's no longer needed */
+/* .video_player-container { ... } */
+
+@media (max-width: 768px) {
+  .service-page{
+	width: 90%;
+  }
+  .service-page h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+  .video-container {
+	min-height: 400px;
+    width: 90%; /* Full width on mobile */
+	z-index: 99999999;
+  }
+
+  
+  .close-button {
+    top: -40px;
+    right: 0;
+  }
+  .service-page p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 600px;
+}
+}
+/* Add these to your existing CSS */
+
+/* Ensure the overlay and container start invisible */
+.video-overlay {
+  opacity: 0;
+}
+
+.video-container {
+  opacity: 0;
+  /* Remove any transform properties from CSS - GSAP will handle this */
+}
+
+/* Optional: Add some transition for the close button hover if you want */
+.close-button {
+  transition: transform 0.3s ease;
+}
+
+.close-button:hover {
+  transform: scale(1.1);
+}

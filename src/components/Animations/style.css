@@ -1,5 +1,83 @@
+/* General container styling */
+.tech-stacks-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Main heading */
+.tech-stacks-heading {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: var(--text-primary-color);
+}
+
+/* Section headings (ul headers) */
+.tech-stacks-subheading {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--text-primary-color);
+  padding-bottom: 8px;
+  text-transform: uppercase;
+}
+
+/* UL list styles */
+.tech-stack-list {
+  list-style-type: none;
+  padding: 0;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* LI (tech stacks items) styles */
+.tech-stack-item {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: var(--text-primary-color);
+  padding: 8px 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Hover effect on li */
+.tech-stack-item:hover {
+  cursor: pointer;
+  color: #666;
+}
+
+/* Hover effect on UL */
+.tech-stack-list:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive design: ensure space between items on smaller screens */
+@media (max-width: 768px) {
+  .tech-stacks-wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .tech-stacks-heading {
+    font-size: 1.8rem;
+  }
+
+  .tech-stacks-subheading {
+    font-size: 1.3rem;
+  }
+
+  .tech-stack-item {
+    font-size: 1rem;
+  }
+}
+
 /* HorizontalScroll.css */
 .scroll-container {
+  margin: 20px;
+  margin-bottom:100px;
   overflow-x: hidden;
   white-space: nowrap;
   width: 100%;
@@ -10,25 +88,37 @@
   display: flex;
   transform: translate3d(0, 0, 0);
   will-change: transform;
-
 }
 
 .header78_image-list {
   display: flex;
+  gap: 40px;
+  margin: 0;
 }
 
 .header78_image-wrapper {
-  flex-shrink: 0;
-  margin-right: 10px;
+  height: 80px;
+  min-width: 80px;
+  width: 80px;
+  background-color: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  border: none;
+  display: flex;
+  border-radius: 15px;
 }
 
 .header78_image {
   display: block;
-  max-width: 200px;
-  max-height: 150px;
-  height: auto;
+  height: 80%;
+  width: 80%;
   margin: 10px;
   border: 3px solid white;
+  filter: grayscale(100%);
+  border-radius: 15px;
+  transition: filter 0.3s ease;
+}
+.header78_image:hover{
+  filter: grayscale(0%);
 }
 
 .w-background-video {
@@ -47,18 +137,26 @@
 }
 
 @media (max-width: 600px) {
+  .header78_image-wrapper{
+	height: 65px;
+	width: 65px;
+	min-height: 60px;
+	min-width: 60px;
+	display: flex;
+  }
+  .header78_image-list{
+	  gap: 10px;
+  }
 .header78_image-wrapper {
-  flex-shrink: 0;
-  margin-right: 6px;
 }
 .header78_image {
   display: block;
-  max-width: 140px;
-  max-height: 100px;
-  height: auto;
+  width: 60px;
+  max-width: 65px;
+  max-height: 65px;
+  height: 60px;
   margin:0;
-  margin-left: 5px;
-  margin-bottom: 20px;
   border: 3px solid white;
+  object-fit: cover;
 }
 }
