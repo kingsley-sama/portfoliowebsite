@@ -1,11 +1,40 @@
 /* Main Heading */
 .kingsley {
-  font-size: 20px;
-  color: #d9d9d9;
+  font-size: 25px;
 }
-
-/* Menu Bar for larger screens */
-.menuebar_alt {
+.menue, .menuebar, .menu_overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+.menue{
+  color: var(--bg-primary-color);
+  background-color: var(--txt-primary-color);
+}
+.menubar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding:0 2em;
+  z-index: 1;
+  background-color: red;
+}
+.menu_overlay{
+  z-index: 2;
+  display: flex;
+  background-color: blue;
+}
+.overlay-bar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding:0 2em;
+  z-index: 1;
+}
+.menu {
   display: flex;
   width: 100%;
   height: 70px;
@@ -18,18 +47,28 @@
 }
 
 /* Hover Box List and Menubar Alt Combined */
-.menuebar_alt ul.hover-box-list {
+.menu-info .menu-info-col{
   list-style: none;
   display: flex;
-  align-items: center;
+  gap: 20px;
+  padding: 0;
+  padding-right: 40px;
+  margin: 0;
+  margin-right: 5px;
+  flex-direction: row;
+}
+.menue ul.hover-box-list {
+  list-style: none;
+  display: flex;
   gap: 20px;
   padding: 0;
   padding-right: 40px;
   margin: 0;
   margin-right: 30px;
+  flex-direction: column;
 }
 
-.menuebar_alt ul.hover-box-list li {
+.menu-info .menu-info-col a::before, .menue ul.hover-box-list li::before {
   position: relative;
   padding-left: 40px;
   color: var(--txt-primary-color);
@@ -37,7 +76,7 @@
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.menuebar_alt ul.hover-box-list li::before {
+.menu-info .menu-info-col a::before, .menue ul.hover-box-list li::before {
   content: '';
   position: absolute;
   left: 0;
@@ -47,116 +86,33 @@
   height: 0;
   transition: width 0.3s ease, height 0.3s ease;
 }
-
-.menuebar_alt ul.hover-box-list li:hover::before {
+.menue ul.hover-box-list li::after {
   width: 40px;
   height: 4px;
   background-color: var(--txt-primary-color);
 }
 
-.menuebar_alt ul.hover-box-list li:hover {
+.menu-info .menu-info-col a:hover, .menue ul.hover-box-list li:hover {
   color: var(--txt-primary-color);
   transform: translateX(10px);
 }
 
 /* Logo in Menuebar */
-.menuebar_alt .logos {
+.menue .logos {
   padding-left: 30px;
   display: flex;
   align-items: center;
   height: 100%;
 }
 
-#small_menuebar {
-  display: none;
-  box-sizing: border-box;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index:3;
-}
 
-@media (max-width: 768px) {
-  #small_menuebar {
-    display: flex;
-	background-color: var(--bg-primary-color);
-  }
-}
-/* Dropdown for Small Menu Bar */
-.dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background: var(--bg-primary-color);
-  transition: 0.3s ease-out;
-  overflow: hidden;
-  max-height: 0;
-}
-
-.dropdown.open {
-  display: flex;
-  z-index: 999999999;
-  height: 500px;
-}
-
-.dropdown_ul {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  margin: 0;
-  list-style: none;
-}
-
-.dropdown_ul li {
-  margin-bottom: 10px;
-}
-
-.dropdown_ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-.dropdown-logo {
-  display: flex;
-  justify-content: center;
-  padding: 20px 0;
-}
-
-.dropdown-logo img {
-  height: 50px;
-  object-fit: contain;
-}
 
 /* Responsive Styles */
-@media (max-width: 768px) {
-
-  .menuebar_alt {
-    display: none;
-  }
-
-  #small_menuebar {
-    display: flex;
-  }
-}
 
 @media (min-width: 769px) {
   /* Main Heading */
  .kingsley {
    font-size: 50px;
-   color: #d9d9d9;
  }
-  .menuebar_alt {
-    display: flex;
-  }
 
-  #small_menuebar {
-    display: none;
-  }
 }
