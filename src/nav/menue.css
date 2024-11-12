@@ -2,117 +2,99 @@
 .kingsley {
   font-size: 25px;
 }
-.menue, .menuebar, .menu_overlay{
+.menu-bar, .menu-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.menu-bar-txt{
+  color: var(--txt-primary-color);
+}
+.menu-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-}
-.menue{
-  color: var(--bg-primary-color);
+  height: 100vh;
+  padding: 2em;
   background-color: var(--txt-primary-color);
-}
-.menubar{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding:0 2em;
-  z-index: 1;
-  background-color: red;
-}
-.menu_overlay{
   z-index: 2;
-  display: flex;
-  background-color: blue;
-}
-.overlay-bar{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  color: var(--bg-primary-color);
   justify-content: space-between;
-  padding:0 2em;
-  z-index: 1;
-}
-.menu {
-  display: flex;
-  width: 100%;
-  height: 70px;
-  position: absolute;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: bold;
-  background-color: var(--bg-primary-color);
-  z-index: 3;
-}
-
-/* Hover Box List and Menubar Alt Combined */
-.menu-info .menu-info-col{
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  padding: 0;
-  padding-right: 40px;
-  margin: 0;
-  margin-right: 5px;
-  flex-direction: row;
-}
-.menue ul.hover-box-list {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  padding: 0;
-  padding-right: 40px;
-  margin: 0;
-  margin-right: 30px;
   flex-direction: column;
 }
 
-.menu-info .menu-info-col a::before, .menue ul.hover-box-list li::before {
+.menu-link-item {
+  width: max-content;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+
+.menu-link-item-holder {
   position: relative;
-  padding-left: 40px;
-  color: var(--txt-primary-color);
-  font-size: 18px;
-  transition: color 0.3s ease, transform 0.3s ease;
+}
+.menu-bar a {
+  cursor: pointer;
 }
 
-.menu-info .menu-info-col a::before, .menue ul.hover-box-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  transition: width 0.3s ease, height 0.3s ease;
+.menu-open p {
+  cursor: pointer;
 }
-.menue ul.hover-box-list li::after {
-  width: 40px;
-  height: 4px;
-  background-color: var(--txt-primary-color);
+.menu-link-item-holder a {
+  color: #000;
+  font-size: 80px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 85%;
 }
-
-.menu-info .menu-info-col a:hover, .menue ul.hover-box-list li:hover {
-  color: var(--txt-primary-color);
-  transform: translateX(10px);
-}
-
-/* Logo in Menuebar */
-.menue .logos {
-  padding-left: 30px;
+.menu-preview {
+  flex: 4;
   display: flex;
-  align-items: center;
-  height: 100%;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
+.menu-close-icon p {
+  font-size: 100px;
+  -webkit-text-stroke: 5px var(--bg-primary-color);
+  line-height: 70%;
+}
+.menu-close-icon {
+  flex: 2;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+}
 
+.menu-copy {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 2em;
+}
+.menu-info-col{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
 
-/* Responsive Styles */
+@media (max-width: 900px) {
+  .menu-close-icon {
+    display: none;
+  }
 
-@media (min-width: 769px) {
-  /* Main Heading */
- .kingsley {
-   font-size: 50px;
- }
+  .menu-copy {
+    padding-top: 8em;
+  }
 
+  .menu-link-item-holder a {
+    font-size: 60px;
+  }
 }
