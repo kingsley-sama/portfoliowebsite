@@ -45,8 +45,8 @@ const Menue_Bar = () => {
   return (
     <div className="menu-container" ref={container}>
       <div className="menu-bar menu-bar-txt">
-        <div className="menu-logo">
-          <Link>Kingsley</Link>
+        <div className="menu-logo" >
+          <Link className='kingsley' to={'/'}>Kingsley</Link>
         </div>
         <div className="menu-open" onClick={toggleNavbar}>
           <p>Menu</p>

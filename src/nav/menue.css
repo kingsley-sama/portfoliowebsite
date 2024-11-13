@@ -1,12 +1,12 @@
 /* Main Heading */
 .kingsley {
-  font-size: 25px;
+  font-size: clamp(2rem, 2vw, 3rem);
+  cursor: pointer;
 }
 .menu-bar, .menu-overlay{
   position: fixed;
   top: 0;
   left: 0;
-  padding: 2em;
   display: flex;
   width: 100vw;
   align-items: center;
@@ -17,7 +17,12 @@
   cursor: pointer;
 }
 .menu-bar-txt{
-  color: var(--txt-primary-color);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 2em;
+  justify-content: space-between;
 }
 .menu-overlay {
   position: fixed;
@@ -25,7 +30,6 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  padding: 2em;
   background-color: var(--txt-primary-color);
   z-index: 2;
   clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
@@ -80,7 +84,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  padding: 2em;
+  justify-content: space-between;
 }
 .menu-copy {
   flex: 4;
