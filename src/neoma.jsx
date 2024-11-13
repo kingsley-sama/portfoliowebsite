@@ -7,12 +7,10 @@ import ProjectItem from "./components/projects";
 import DownBar from './root/bottom_bar';
 import HorizontalScroll, { TechStacks } from './components/Animations';
 import AboutMe from './components/reviews/reviews';
-import AboutNe from './components/our_team';
 import ArticleSample from './components/blogcard/bob';
 import Services from './components/reviews';
 import gsap from 'gsap';
 import CustomEase from 'gsap/CustomEase';
-import PreLoader from './components/preloader';
 import ReactLenis from '@studio-freight/react-lenis';
 import ProjectDetails from './components/projects/main';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -78,13 +76,11 @@ export default function NeomaLandingPage() {
 
     requestAnimationFrame(updateCounter);
   };
-
   const revealLandingPage = () => {
     CustomEase.create(
       "hop",
       "M0,0 C0.29,0 0.348,0.05 0.422,0.134 0.494,0.217 0.484,0.355 0.5,0.5 0.518,0.662 0.515,0.793 0.596,0.876 0.701,0.983 0.72,0.987 1,1"
     );
-
     gsap.to(heroRef.current, {
       clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
       duration: 2,
@@ -118,12 +114,9 @@ export default function NeomaLandingPage() {
       },
     });
   };
-
   useEffect(() => {
     const hasPlayed = sessionStorage.getItem('animationPlayed');
     if (!hasPlayed) {
-      // If the animation hasn't played yet, set the flag and show the animation
-      // setShowAnimation(true);
       sessionStorage.setItem('animationPlayed', 'true');
     }
     animateCounter()
@@ -147,7 +140,6 @@ export default function NeomaLandingPage() {
                     <section className="hero" ref={heroRef}>
                       <div className="overlay" ref={overlayRef}></div>
                     </section>
-                    
                   </div>
                   {animationComplete ? (
                     <>
@@ -192,15 +184,11 @@ const DeveloperPage = () => {
       subtitleRef.current,
       imageRef.current
     ];
-
     // Set initial states
     gsap.set(elements, { x: -100, autoAlpha: 0 });
-
-    // Create animation timeline
     const tl = gsap.timeline({
       delay: 0.8}
     );
-    
     // Animate elements sequentially
     elements.forEach((element, index) => {
       tl.to(element, {
@@ -231,58 +219,11 @@ const DeveloperPage = () => {
           <button id='hover_button'>Hover <br /> Here</button>
         </div>
       </div>
+
     </div>
   );
 };
-// export const DeveloperPage = () => {
-//   const pageRef = useRef(null);
-//   const contentRef = useRef(null);
-//   const imageRef = useRef(null);
 
-//   useEffect(() => {
-//     const page = pageRef.current;
-//     const content = contentRef.current;
-//     const image = imageRef.current;
-
-//     gsap.set(page, { autoAlpha: 0, scale: 0.9 });
-//     gsap.set(content, { y: 50, autoAlpha: 0 });
-//     gsap.set(image, { scale: 1.2, autoAlpha: 0.9});
-
-//     const tl = gsap.timeline({
-//       scrollTrigger: {
-//         trigger: page,
-//         start: "top center",
-//         end: "bottom center",
-//         scrub: 1,
-//       }
-//     });
-
-//     tl.to(page, { autoAlpha: 1, scale: 1, duration: 1, ease: "power3.out" })
-//       .to(content, { y: 0, autoAlpha: 1, duration: 1, ease: "power3.out" }, "-=0.5")
-//       .to(image, { scale: 1, autoAlpha: 1, duration: 1, ease: "power3.out" }, "-=0.5");
-
-//     return () => {
-//       tl.kill();
-//     };
-//   }, []);
-
-//   return (
-//     <div className="developer-page" ref={pageRef}>
-//       <div className="content" ref={contentRef}>
-//         <h1 id="web-mobile-h1">
-//           <span className="left-align">Web & M<div className='circle_img'></div>bile</span>
-//           <span className="right-align">DEVELOPER</span>
-//         </h1>
-//         <p>Full Stack Developer With 3<br />plus years of experience</p>
-//       </div>
-//       <div className="image-section" ref={imageRef}>
-//         <div className="image-overlay">
-//           <button id='hover_button'>Hover <br /> Here</button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
 gsap.registerPlugin(ScrollTrigger);
 
 const ProjectsPage = () => {

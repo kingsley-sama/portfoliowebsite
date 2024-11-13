@@ -1,7 +1,41 @@
-import React, { Component } from 'react';
-import "./reviews.css"
+import React, { useEffect, useRef } from 'react';
+import "./reviews.css";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const AboutMe = () => {
+  // Create refs for the elements
+  const imageContainerRef = useRef(null);
+  const bottomOverlayRef = useRef(null);
+  const topOverlayRef = useRef(null);
+
+  useEffect(() => {
+    const imageContainer = imageContainerRef.current;
+    const bottomOverlay = bottomOverlayRef.current;
+    const topOverlay = topOverlayRef.current;
+
+    // Set initial styles
+    gsap.set([bottomOverlay, topOverlay], { width: '100%', height: '50%' });
+
+    // Create the GSAP animation
+    gsap.to([bottomOverlay, topOverlay], {
+      scrollTrigger: {
+        trigger: imageContainer,
+        start: 'top center',
+        end: 'bottom 20%',
+        scrub: true,
+        toggleActions: 'play none none reverse',
+      },
+      width: '70px',
+      height: '100px',
+      duration: 10,
+      delay: 1,
+      ease: 'power2.out',
+    });
+  }, []); // Empty dependency array to run only once
+
   return (
     <div className='about-page'>
       <div>
@@ -14,9 +48,12 @@ const AboutMe = () => {
           to create something extraordinary—where every line of code tells a story.
         </p>
       </div>
-      <div className='about-img'></div>
+      <div ref={imageContainerRef} className='about-img'>
+        <div ref={topOverlayRef} className='top-overlay'></div>
+        <div ref={bottomOverlayRef} className="bottom-overlay"></div>
+      </div>
     </div>
   );
-}
+};
 
 export default AboutMe;

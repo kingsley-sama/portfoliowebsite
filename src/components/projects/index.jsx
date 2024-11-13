@@ -102,16 +102,58 @@ export default function Component() {
       </div>
     </>
   )
-} 
+}
+
+// const ProductCard = ({ title, description, price, imageUrl }) => {
+//   return (
+//     <div className='grid'>
+//       <div className='one'></div>
+//       <div className='two'></div>
+//       <div className='three'></div>
+//       <div className='four'></div>
+//     </div>
+//   );
+// };
 const ProductCard = ({ title, description, price, imageUrl }) => {
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    // Register the ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Get the card element reference
+    const card = cardRef.current;
+
+    // Set up the GSAP animation
+    gsap.fromTo(
+      [card.querySelector('.one'), card.querySelector('.two'), card.querySelector('.three'), card.querySelector('.four')],
+      {
+        y: -50,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.3,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 80%',
+          end: 'bottom 20%',
+          scrub: true,
+          toggleActions: 'play none none reverse',
+        },
+      }
+    );
+  }, []);
+
   return (
-    <div className='grid'>
-      <div className='one'></div>
-      <div className='two'></div>
-      <div className='three'></div>
-      <div className='four'></div>
+    <div ref={cardRef} className="grid grid-cols-2 gap-4">
+      <div className="one" ></div>
+      <div className="two" ></div>
+      <div className="three" ></div>
+      <div className="four"></div>
     </div>
   );
 };
-
 export { ProductCard };
