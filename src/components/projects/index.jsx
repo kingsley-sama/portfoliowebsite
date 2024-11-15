@@ -104,21 +104,9 @@ export default function Component() {
   )
 }
 
-// const ProductCard = ({ title, description, price, imageUrl }) => {
-//   return (
-//     <div className='grid'>
-//       <div className='one'></div>
-//       <div className='two'></div>
-//       <div className='three'></div>
-//       <div className='four'></div>
-//     </div>
-//   );
-// };
 const ProductCard = ({ title, description, price, imageUrl }) => {
   const cardRef = useRef(null);
-
   useEffect(() => {
-    // Register the ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
 
     // Get the card element reference
