@@ -20,9 +20,8 @@
   scrollbar-width: none;
 }
 .project-image{
-  min-height: 350px;
+  min-height:80vh;
   height: 40%;
-  max-height: 350px;
   width: 100%;
   background-position: center;
   border-radius: 5px;
@@ -137,7 +136,8 @@ h1 {
 
 .competitor-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-columns: 1fr; */
   gap: 1.5rem;
   background-color: #f5f5f5;
   border-radius: 1.5rem;
@@ -173,4 +173,174 @@ h1 {
 .company-logo {
   height: 2rem;
   object-fit: contain;
+}
+.ProblemDiscovery-container {
+  min-height: 100vh;
+  background-color: #111111;
+  color: #9ca3af;
+  padding: 2rem;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.ProblemDiscovery-content {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.ProblemDiscovery-header {
+  margin-bottom: 2rem;
+}
+
+.ProblemDiscovery-category {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.ProblemDiscovery-title {
+  color: white;
+  font-size: 2.25rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.ProblemDiscovery-divider {
+  height: 1px;
+  background-color: #1f2937;
+  width: 100%;
+}
+
+.ProblemDiscovery-textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+.ProblemDiscovery-highlight {
+  color: white;
+}
+
+.ProblemDiscovery-imageGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.ProblemDiscovery-imageContainer {
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.ProblemDiscovery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ProblemDiscovery-container {
+    padding: 1rem;
+  }
+
+  .ProblemDiscovery-title {
+    font-size: 1.875rem;
+  }
+
+  .ProblemDiscovery-textContent {
+    font-size: 1rem;
+  }
+
+  .ProblemDiscovery-imageGrid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ProjectCollaborators.css */
+.collaborators-container {
+  background-color: #111111;
+  color: #9ca3af;
+  padding: 64px 16px;
+}
+
+.collaborators-content {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.collaborators-title {
+  color: white;
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+.collaborators-divider {
+  height: 1px;
+  background-color: #1f2937;
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+.collaborators-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.collaborator-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.collaborator-image-container {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  max-width: 96px;
+  max-height: 96px;
+  margin-bottom: 16px;
+}
+
+.collaborator-image {
+  border-radius: 50%;
+}
+
+.collaborator-name {
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 4px;
+}
+
+.collaborator-role {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Media Queries */
+@media (min-width: 640px) {
+  .collaborators-container {
+    padding: 64px 32px;
+  }
+  
+  .collaborators-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .collaborators-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .collaborators-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }

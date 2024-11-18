@@ -170,8 +170,11 @@ const ProjectDetails = () => {
               )}
             </div>
           </div>
+          <CompetitorAnalysis />
+          <ProblemDiscovery />
+          <ProjectCollaborators />
         </div>
-        <CompetitorAnalysis/>
+
       </div>
     </>
   );
@@ -188,12 +191,12 @@ const competitors = [
   {
     name: "GYMSHARK",
     logo: "/placeholder.svg?height=50&width=150",
-    image: "https://images.unsplash.com/photo-1604480132736-44c188fe3df2?w=800&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&h=600&fit=crop",
   },
   {
     name: "manifest",
     logo: "/placeholder.svg?height=50&width=150",
-    image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&h=600&fit=crop"
   },
 ];
 
@@ -234,6 +237,117 @@ function CompetitorAnalysis() {
                 alt={`${competitor.name} logo`}
                 className="company-logo"
               />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+
+function ProblemDiscovery() {
+  return (
+    <div className="ProblemDiscovery-container">
+      <div className="ProblemDiscovery-content">
+        <header className="ProblemDiscovery-header">
+          <div className="ProblemDiscovery-category">RESEARCH</div>
+          <h1 className="ProblemDiscovery-title">Initial Problem Discovery</h1>
+          <div className="ProblemDiscovery-divider"></div>
+        </header>
+        
+        <div className="ProblemDiscovery-textContent">
+          <p>
+            After <span className="ProblemDiscovery-highlight">COVID-19</span>, we observed a
+            <span className="ProblemDiscovery-highlight"> notable shift</span> in people's desire for authentic, real-life connections. However, the available
+            options for such <span className="ProblemDiscovery-highlight">interactions were found lacking</span>. Traditional spaces like co-working environments, coffee shops, gyms, and
+            bars, while popular, often provided <span className="ProblemDiscovery-highlight">limited experiences</span> that felt somewhat
+            <span className="ProblemDiscovery-highlight"> disconnected and independent</span>. Recognizing this
+            social need for meaningful connections, we aimed to address these challenges specifically within <span className="ProblemDiscovery-highlight">brick-and-mortar</span> retail
+            spaces.
+          </p>
+          <p>
+            On the other hand, a significant challenge emerged within the realm of <span className="ProblemDiscovery-highlight">online shopping</span> experiences. Brands increasingly
+            converted their physical stores into marketing channels to drive sales, engagement, and gather insights into customer
+            preferences. However, a crucial gap existed in how these brands captured and analyzed in-store interactions. With a
+            predominant focus on optimizing the online shopping journey, the <span className="ProblemDiscovery-highlight">real-life engagement</span> happening within physical stores often
+            went <span className="ProblemDiscovery-highlight">unnoticed and underutilized</span>.
+          </p>
+        </div>
+        
+        <div className="ProblemDiscovery-imageGrid">
+          <div className="ProblemDiscovery-imageContainer">
+            <img
+              src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&h=600&fit=crop"
+              alt="Illustration of two people using laptops back to back"
+              width={600}
+              height={400}
+              className="ProblemDiscovery-image"
+            />
+          </div>
+          <div className="ProblemDiscovery-imageContainer">
+            <img
+              src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&h=600&fit=crop"
+              alt="Illustration of hands interacting with analytics dashboard"
+              width={600}
+              height={400}
+              className="ProblemDiscovery-image"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+// ProjectCollaborators.jsx
+function ProjectCollaborators() {
+  const collaborators = [
+    {
+      name: "Alex Johnson",
+      role: "Lead UX Designer",
+                },
+    {
+      name: "Sam Lee",
+      role: "Frontend Developer",
+                },
+    {
+      name: "Taylor Swift",
+      role: "Project Manager",
+                },
+    {
+      name: "Jordan Patel",
+      role: "UI Designer",
+            
+    },
+    {
+      name: "Casey Morgan",
+      role: "Backend Developer",
+      
+      
+    }
+  ];
+
+  return (
+    <div className="collaborators-container">
+      <div className="collaborators-content">
+        <h2 className="collaborators-title">Project Collaborators</h2>
+        <div className="collaborators-divider"></div>
+        
+        <div className="collaborators-grid">
+          {collaborators.map((collaborator) => (
+            <div key={collaborator.name} className="collaborator-card">
+              <div className="collaborator-image-container">
+                <img
+                  src={collaborator.image}
+                  alt={collaborator.name}
+                  layout="fill"
+                  objectFit="cover"
+                  className="collaborator-image"
+                />
+              </div>
+              <h3 className="collaborator-name">{collaborator.name}</h3>
+              <p className="collaborator-role">{collaborator.role}</p>
             </div>
           ))}
         </div>
