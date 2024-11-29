@@ -109,10 +109,9 @@ const ProjectDetails = () => {
   };
 
   useEffect(() => {
-    // Start the counter animation after a short delay
     const timer = setTimeout(() => {
       animateCounter();
-    }, 200);
+    }, 150);
 
     return () => clearTimeout(timer);
   }, []);
@@ -121,10 +120,6 @@ const ProjectDetails = () => {
   const handleBack = () => {
     navigate(-1);
   };
-
-  // if (!project) {
-  //   return <div>Project not found</div>
-  // }
 
   return (
     <>
