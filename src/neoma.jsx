@@ -14,7 +14,7 @@ import CustomEase from 'gsap/CustomEase';
 import ReactLenis from '@studio-freight/react-lenis';
 import ProjectDetails from './components/projects/main';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react'; 
+import { useGSAP } from '@gsap/react';
 import { delay } from 'framer-motion';
 gsap.registerPlugin(CustomEase, ScrollTrigger);
 export default function NeomaLandingPage() {
@@ -25,14 +25,14 @@ export default function NeomaLandingPage() {
   const workRef = useRef(null);
   const containerRef = useRef(null);
   const [animationComplete, setAnimationComplete] = useState(false);
-  const [showAnimation, setShowAnimation] = useState(false);
+  const [showAnimation, setShowAnimation] = useState(true);
   const [animationDone, setAnimationDone] = useState(false);
   const animateCounter = () => {
     const counterElement = counterRef.current;
     const kingsElement = kingsRef.current;
     const workElement = workRef.current;
     let currentValue = 0;
-    const updateInterval = 30; // Faster updates for smoother animation
+    const updateInterval = 30;
     const maxDuration = 2000;
     const endValue = 100;
     const startTime = Date.now();
@@ -54,6 +54,7 @@ export default function NeomaLandingPage() {
           counterElement.textContent = `${endValue}%`;
         }
         setTimeout(() => {
+          sessionStorage.setItem('animationPlayed', 'true');
           gsap.to(counterElement, {
             y: -50,
             duration: 2,
@@ -116,10 +117,15 @@ export default function NeomaLandingPage() {
   };
   useEffect(() => {
     const hasPlayed = sessionStorage.getItem('animationPlayed');
-    if (!hasPlayed) {
-      sessionStorage.setItem('animationPlayed', 'true');
+    if (hasPlayed !== 'true') {
+      setShowAnimation(true );
+      
+      animateCounter()
+    } else {
+      setShowAnimation(false);
+      setAnimationComplete(true)
+      animateCounter()
     }
-    animateCounter()
   }, []);
   return (
     <ReactLenis root>
@@ -129,18 +135,21 @@ export default function NeomaLandingPage() {
             <Routes>
               <Route path="/" element={
                 <div>
-                  <div ref={containerRef} className="container">
-                    <div className="counter">
-                      <div>
-                        <p ref={workRef} className='work'>Web.Mobile.Dev</p>
-                        <h1 ref={kingsRef} className='kings'>KINGSLEY.OKPO</h1>
-                        <p className='counter-text' ref={counterRef}>0%</p>
+                  {showAnimation ? (
+                    <div ref={containerRef} className="container">
+                      <div className="counter">
+                        <div>
+                          <p ref={workRef} className='work'>Web.Mobile.Dev</p>
+                          <h1 ref={kingsRef} className='kings'>KINGSLEY.OKPO</h1>
+                          <p className='counter-text' ref={counterRef}>0%</p>
+                        </div>
                       </div>
+                      <section className="hero" ref={heroRef}>
+                        <div className="overlay" ref={overlayRef}></div>
+                      </section>
                     </div>
-                    <section className="hero" ref={heroRef}>
-                      <div className="overlay" ref={overlayRef}></div>
-                    </section>
-                  </div>
+                  ) : null}
+
                   {animationComplete ? (
                     <>
                       <Menue_Bar />
@@ -160,9 +169,9 @@ export default function NeomaLandingPage() {
                     </>
                   ) : (
                     <div className='loading-screen'>Loading Animation...</div>
-      )}
+                  )}
                 </div>
-              }/>
+              } />
               <Route path="/project/:project_id" element={<ProjectDetails />} />
             </Routes>
             <DownBar />
@@ -187,7 +196,8 @@ const DeveloperPage = () => {
     // Set initial states
     gsap.set(elements, { x: -100, autoAlpha: 0 });
     const tl = gsap.timeline({
-      delay: 0.8}
+      delay: 0.8
+    }
     );
     // Animate elements sequentially
     elements.forEach((element, index) => {
@@ -231,10 +241,10 @@ const ProjectsPage = () => {
 
   useEffect(() => {
     const container = containerRef.current;
-    
-     ScrollTrigger.create({
+
+    ScrollTrigger.create({
       trigger: container,
-       start: "top top", // When the container hits the center of the viewport
+      start: "top top", // When the container hits the center of the viewport
       onEnter: () => {
         gsap.to(container, {
           backgroundColor: '#d3d3d3', // Your desired background color
