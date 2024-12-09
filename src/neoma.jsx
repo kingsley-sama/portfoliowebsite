@@ -5,7 +5,7 @@ import { Menue_Bar } from './nav/menue';
 import { ProductCard } from './components/projects';
 import ProjectItem from "./components/projects";
 import DownBar from './root/bottom_bar';
-import HorizontalScroll, { TechStacks } from './components/Animations';
+import { TechStacks } from './components/Animations';
 import AboutMe from './components/reviews/reviews';
 import ArticleSample from './components/blogcard/bob';
 import Services from './components/reviews';
@@ -115,7 +115,7 @@ export default function NeomaLandingPage() {
       },
     });
   };
-  useEffect(() => {
+  useGSAP(() => {
     const hasPlayed = sessionStorage.getItem('animationPlayed');
     if (hasPlayed !== 'true') {
       setShowAnimation(true );
