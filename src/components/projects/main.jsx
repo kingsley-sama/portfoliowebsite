@@ -2,13 +2,14 @@ import { useParams, useNavigate } from 'react-router-dom';
 import "./main.css"
 import "../../App.css"
 import gsap from 'gsap';
-import { projects } from './details';
+import { projectsData } from './details';
 import CustomEase from 'gsap/CustomEase';
 import ReactLenis from '@studio-freight/react-lenis';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 gsap.registerPlugin(CustomEase, ScrollTrigger);
+
 const ProjectDetails = () => {
   const { project_id } = useParams();
   const navigate = useNavigate();
@@ -92,7 +93,6 @@ const ProjectDetails = () => {
           ease: "power3.inOut",
           delay: 0.4,
           onComplete: () => {
-            setAnimationComplete(true);
             gsap.to(containerRef.current, {
               opacity: 0,
               duration: 0.4,
@@ -108,15 +108,16 @@ const ProjectDetails = () => {
     });
   };
 
-  useEffect(() => {
+  useGSAP(() => {
     const timer = setTimeout(() => {
       animateCounter();
+      setAnimationComplete(true)
     }, 150);
 
     return () => clearTimeout(timer);
   }, []);
-  const project = projects.find(p => p.id === project_id);
-
+  const project = projectsData.find(p => p.id === project_id);
+  console.log(project.title)
   const handleBack = () => {
     navigate(-1);
   };
@@ -165,9 +166,9 @@ const ProjectDetails = () => {
               )}
             </div>
           </div>
-          <CompetitorAnalysis />
-          <ProblemDiscovery />
-          <ProjectCollaborators />
+          <CompetitorAnalysis data={project.competitorAnalysis.competitors}/>
+          <ProblemDiscovery data={project.problemDiscovery}/>
+          <ProjectCollaborators collaborators={project.collaborators}/>
         </div>
 
       </div>
@@ -176,39 +177,23 @@ const ProjectDetails = () => {
 };
 
 export default ProjectDetails;
-// CompetitorAnalysis.jsx
-const competitors = [
-  {
-    name: "lululemon",
-    logo: "/placeholder.svg?height=50&width=150",
-    image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&h=600&fit=crop",
-  },
-  {
-    name: "GYMSHARK",
-    logo: "/placeholder.svg?height=50&width=150",
-    image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&h=600&fit=crop",
-  },
-  {
-    name: "manifest",
-    logo: "/placeholder.svg?height=50&width=150",
-    image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&h=600&fit=crop"
-  },
-];
 
-function CompetitorAnalysis() {
+function CompetitorAnalysis({data}) {
+  const competitors = data
+  console.log(competitors)
   return (
     <div className="project-detail-container">
       <div className="project-detail-content">
         {/* Header Section */}
-        <div className="header">
+    <div className="header">
           <div className="category">RESEARCH</div>
           <h1 className="title">Competitor Analysis</h1>
-          
+
           <p className="description">
-            Although our <span className="highlight">app</span> is something that <span className="highlight">hasn't been done before</span>, 
-            we wanted to take a closer look at the <span className="highlight">companies</span> that have 
-            <span className="highlight"> attempted to enhance their in-person shopping experience</span>, 
-            whether through integrating coffee shops or juice bars within their retail space or by hosting engaging events, and 
+            Although our <span className="highlight">app</span> is something that <span className="highlight">hasn't been done before</span>,
+            we wanted to take a closer look at the <span className="highlight">companies</span> that have
+            <span className="highlight"> attempted to enhance their in-person shopping experience</span>,
+            whether through integrating coffee shops or juice bars within their retail space or by hosting engaging events, and
             <span className="highlight"> examine their levels of success or failure</span>.
           </p>
         </div>
@@ -216,8 +201,8 @@ function CompetitorAnalysis() {
         {/* Competitor Grid */}
         <div className="competitor-grid">
           {competitors.map((competitor) => (
-            <div 
-              key={competitor.name} 
+            <div
+              key={competitor.name}
               className="competitor-card"
             >
               <div className="image-container">
@@ -242,7 +227,7 @@ function CompetitorAnalysis() {
 
 
 
-function ProblemDiscovery() {
+function ProblemDiscovery({data}) {
   return (
     <div className="ProblemDiscovery-container">
       <div className="ProblemDiscovery-content">
@@ -251,7 +236,7 @@ function ProblemDiscovery() {
           <h1 className="ProblemDiscovery-title">Initial Problem Discovery</h1>
           <div className="ProblemDiscovery-divider"></div>
         </header>
-        
+
         <div className="ProblemDiscovery-textContent">
           <p>
             After <span className="ProblemDiscovery-highlight">COVID-19</span>, we observed a
@@ -270,7 +255,7 @@ function ProblemDiscovery() {
             went <span className="ProblemDiscovery-highlight">unnoticed and underutilized</span>.
           </p>
         </div>
-        
+
         <div className="ProblemDiscovery-imageGrid">
           <div className="ProblemDiscovery-imageContainer">
             <img
@@ -296,39 +281,13 @@ function ProblemDiscovery() {
   );
 }
 // ProjectCollaborators.jsx
-function ProjectCollaborators() {
-  const collaborators = [
-    {
-      name: "Alex Johnson",
-      role: "Lead UX Designer",
-                },
-    {
-      name: "Sam Lee",
-      role: "Frontend Developer",
-                },
-    {
-      name: "Taylor Swift",
-      role: "Project Manager",
-                },
-    {
-      name: "Jordan Patel",
-      role: "UI Designer",
-            
-    },
-    {
-      name: "Casey Morgan",
-      role: "Backend Developer",
-      
-      
-    }
-  ];
-
+function ProjectCollaborators({collaborators}){
   return (
     <div className="collaborators-container">
       <div className="collaborators-content">
         <h2 className="collaborators-title">Project Collaborators</h2>
         <div className="collaborators-divider"></div>
-        
+
         <div className="collaborators-grid">
           {collaborators.map((collaborator) => (
             <div key={collaborator.name} className="collaborator-card">

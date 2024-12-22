@@ -1,14 +1,14 @@
 .article_parent{
-  height: 400px;
-  width: 350px;
+  height: 300px;
+  width: 400px;
   display: flex;
   flex-direction: column;
 }
 .article_banner {
   height: 80%;
-  background: url('./images/image-product-desktop.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   width: 100%;
   min-width: 100%;
   display: flex;

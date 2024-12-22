@@ -159,9 +159,8 @@ export default function NeomaLandingPage() {
                         <AboutMe />
                         <Articles />
                         <Services />
+                        <h1>Certifications</h1>
                         <div className='article_wrapper'>
-                          <ArticleSample />
-                          <ArticleSample />
                           <ArticleSample />
                         </div>
                         <TechStacks />

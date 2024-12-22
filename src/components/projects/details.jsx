@@ -1,19 +1,80 @@
-export const projects = [
+export const projectsData = [
   {
     id: "sucasa",
-    title: "Sucasa.com",
-    imageUrl: "/path/to/sucasa-image.jpg",
-    userStory: "I developed a full stack platform for a company focused on nurturing talents through creative educational resources. The project balanced backend scalability and a responsive, user-friendly frontend. Collaborating closely with the team, I delivered a tool that supports learning and talent development, enriching educational access across the country.",
-    techStack: "To build a full stack platform with Python, you can use frameworks like Flask or Django for backend development, alongside PostgreSQL or MongoDB for database management. Frontend development can leverage React.js or Vue.js, with Bootstrap or TailwindCSS for responsive design. DevOps tools like Docker, Kubernetes, and NGINX can handle containerization and deployment, while AWS or Google Cloud provides scalable hosting. For testing and monitoring, Pytest, Selenium, and New Relic are essential. Celery with RabbitMQ can manage background tasks, and Swagger or Postman helps with API documentation and testing.",
-    liveUrl: "https://sucasa.com"
-  },
-  // Add more projects as needed
-  {
-    id: "another-project",
-    title: "Another Project",
-    imageUrl: "/path/to/another-image.jpg",
-    userStory: "This is another project's user story...",
-    techStack: "This project used different technologies...",
-    liveUrl: "https://anotherproject.com"
+    title: "Sucasa",
+    imageUrl: "/project-image.jpg",
+    userStory: "Your user story here",
+    techStack: "React, Node.js, MongoDB",
+    liveUrl: "https://example.com",
+    
+    // Competitor Analysis Data
+    competitorAnalysis: {
+      description: "Although our app is something that hasn't been done before, we wanted to take a closer look at the companies that have attempted to enhance their in-person shopping experience, whether through integrating coffee shops or juice bars within their retail space or by hosting engaging events, and examine their levels of success or failure.",
+      competitors: [
+        {
+          name: "lululemon",
+          logo: "/placeholder.svg?height=50&width=150",
+          image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&h=600&fit=crop",
+        },
+        {
+          name: "GYMSHARK",
+          logo: "/placeholder.svg?height=50&width=150",
+          image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&h=600&fit=crop",
+        },
+        {
+          name: "manifest",
+          logo: "/placeholder.svg?height=50&width=150",
+          image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&h=600&fit=crop",
+        }
+      ]
+    },
+    
+    // Problem Discovery Data
+    problemDiscovery: {
+      paragraphs: [
+        "After COVID-19, we observed a notable shift in people's desire for authentic, real-life connections. However, the available options for such interactions were found lacking. Traditional spaces like co-working environments, coffee shops, gyms, and bars, while popular, often provided limited experiences that felt somewhat disconnected and independent. Recognizing this social need for meaningful connections, we aimed to address these challenges specifically within brick-and-mortar retail spaces.",
+        "On the other hand, a significant challenge emerged within the realm of online shopping experiences. Brands increasingly converted their physical stores into marketing channels to drive sales, engagement, and gather insights into customer preferences. However, a crucial gap existed in how these brands captured and analyzed in-store interactions. With a predominant focus on optimizing the online shopping journey, the real-life engagement happening within physical stores often went unnoticed and underutilized."
+      ],
+      images: [
+        {
+          src: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&h=600&fit=crop",
+          alt: "Illustration of two people using laptops back to back"
+        },
+        {
+          src: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&h=600&fit=crop",
+          alt: "Illustration of hands interacting with analytics dashboard"
+        }
+      ]
+    },
+    
+    // Collaborators Data
+    collaborators: [
+      {
+        name: "Alex Johnson",
+        role: "Lead UX Designer",
+        image: "/placeholder-image.jpg"
+      },
+      {
+        name: "Sam Lee",
+        role: "Frontend Developer",
+        image: "/placeholder-image.jpg"
+      },
+      {
+        name: "Taylor Swift",
+        role: "Project Manager",
+        image: "/placeholder-image.jpg"
+      },
+      {
+        name: "Jordan Patel",
+        role: "UI Designer",
+        image: "/placeholder-image.jpg"
+      },
+      {
+        name: "Casey Morgan",
+        role: "Backend Developer",
+        image: "/placeholder-image.jpg"
+      }
+    ]
   }
+  // Add more projects as needed
 ];

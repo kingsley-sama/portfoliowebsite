@@ -1,21 +1,35 @@
-import React, { Component } from 'react';
+import React from 'react';
 import "./bob.css";
-import cartIcon from './images/icon-cart.svg';
-import productImage from './images/image-product-desktop.jpg';
+import ALX_cert from './images/17-short-specializations-certificate-kingsley-okpo.png';
+import GIT_cert from './images/admin-river-image__1_.png'
 
 const ArticleSample =()=>{
+    const certifications = [
+      {
+        name: "ALX Software Engineering",
+        date: "15/11/2024",
+        image: ALX_cert
+      },
+      {
+        name: "GitHub Administration",
+        date: "10/09/2024",
+        image: GIT_cert
+      }
+    ]
     return (
-      <div className='article_parent'>
-        <div className='article_banner'>
-          <div id='overlay'>
-            <button>Read Now</button>
+      certifications.map(certificate => (
+        <div className='article_parent' key={certificate.name}>
+          <div className='article_banner' style={{ backgroundImage: `url(${certificate.image})` }}>
+            <div id='overlay'>
+              <button>View</button>
+            </div>
+          </div>
+          <div className='article_text'>
+            <p>Name: {certificate.name}</p>
+            <p>Date: {certificate.date}</p>
           </div>
         </div>
-        <div className='article_text'>
-          <p>Author: </p>
-          <p>Date: </p>
-        </div>
-      </div>
+      ))
     );
 }
 
