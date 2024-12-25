@@ -1,3 +1,4 @@
+
 export const projectsData = [
   {
     id: "sucasa",
@@ -47,32 +48,26 @@ export const projectsData = [
       ]
     },
     
-    // Collaborators Data
     collaborators: [
       {
         name: "Alex Johnson",
         role: "Lead UX Designer",
-        image: "/placeholder-image.jpg"
       },
       {
         name: "Sam Lee",
         role: "Frontend Developer",
-        image: "/placeholder-image.jpg"
       },
       {
         name: "Taylor Swift",
         role: "Project Manager",
-        image: "/placeholder-image.jpg"
       },
       {
         name: "Jordan Patel",
         role: "UI Designer",
-        image: "/placeholder-image.jpg"
       },
       {
         name: "Casey Morgan",
         role: "Backend Developer",
-        image: "/placeholder-image.jpg"
       }
     ]
   }
