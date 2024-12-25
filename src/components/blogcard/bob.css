@@ -1,6 +1,6 @@
 .article_parent{
-  height: 300px;
-  width: 400px;
+  height: 350px;
+  width: 500px;
   display: flex;
   flex-direction: column;
 }

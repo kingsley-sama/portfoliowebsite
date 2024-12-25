@@ -10,4 +10,3 @@ def print_obj(name, title, day, email):
 
 
 print_obj(**obj)
-print(**obj)

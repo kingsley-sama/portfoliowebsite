@@ -413,7 +413,9 @@
   grid-area: d;
 }
 .grid div {
-  background: url('/img/sucasa_inspiration1.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   filter: grayscale(100%);
   transition: filter 0.3s ease; /* Smooth transition for the filter */
 }
@@ -442,14 +444,14 @@
   .grid{
 	grid-template-columns: repeat(4, 100px);
 	grid-template-rows: repeat(7, 100px);
-    grid-template-areas:
+    /* grid-template-areas:
       "a a a a"
       "a a a a "
       "b b c c"
       "b b c c"
       "b b c c"
       "d d d d"
-      "d d d d";
+      "d d d d"; */
   }
   
 }
@@ -459,13 +461,13 @@
 	grid-gap: 20px;
 	grid-template-columns: repeat(4, 60px);
 	grid-template-rows: repeat(7, 50px);
-    grid-template-areas:
+    /* grid-template-areas:
       "a a a a"
       "a a a a "
       "b b c c"
       "b b c c"
       "b b c c"
       "d d d d"
-      "d d d d";
+      "d d d d"; */
   }
 }

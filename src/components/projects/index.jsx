@@ -4,14 +4,15 @@ import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import "./style.css"
+import { useGSAP } from '@gsap/react'
 // Sample array with 20 project information entries
 const projectsData = [
   {
     number: '01',
-    name: 'ECOMMERCE.COM',
+    name: 'ODERASBM.COM',
     title: 'E-COMMERCE PLATFORM',
     description: 'SCALABLE ONLINE SHOPPING SOLUTION\nBUILT WITH NEXTJS, TYPESCRIPT,\nSTRIPE, MONGODB.',
-    image: '/img/ecommerce_platform.png'
+    image: '/projects_images/oderasbm.png'
   },
   {
     number: '02',
@@ -105,13 +106,47 @@ export default function Component() {
 }
 
 const ProductCard = ({ title, description, price, imageUrl }) => {
+  const card_data = [
+    {
+      id: "id",
+      name: "name",
+      description: "description",
+      link: "link",
+      image_url: "/img/steptodown.com504145.jpg",
+      
+      class_name: "one"
+    },
+    {
+      id: "id",
+      name: "name",
+      description: "description",
+      link: "link",
+      image_url: "/img/front-end.png",
+      class_name: "two"
+    },
+    {
+      id: "id",
+      name: "name",
+      description: "description",
+      link: "link",
+      image_url: "/img/agile.jpg",
+      class_name: "three"
+    },
+    {
+      id: "id",
+      name: "name",
+      description: "description",
+      link: "link",
+      image_url: "img/steptodown.com641916.jpg",
+      class_name: "four"
+    },
+  ]
   const cardRef = useRef(null);
-  useEffect(() => {
+  useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
-
     // Get the card element reference
     const card = cardRef.current;
-
+ 
     // Set up the GSAP animation
     gsap.fromTo(
       [card.querySelector('.one'), card.querySelector('.two'), card.querySelector('.three'), card.querySelector('.four')],
@@ -137,10 +172,9 @@ const ProductCard = ({ title, description, price, imageUrl }) => {
 
   return (
     <div ref={cardRef} className="grid grid-cols-2 gap-4">
-      <div className="one" ></div>
-      <div className="two" ></div>
-      <div className="three" ></div>
-      <div className="four"></div>
+      {card_data.map( data => 
+          <div className={data.class_name} style={{backgroundImage: `url(${data.image_url}) `}}></div>
+      )}
     </div>
   );
 };
