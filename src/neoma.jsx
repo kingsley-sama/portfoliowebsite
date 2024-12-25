@@ -16,6 +16,7 @@ import ProjectDetails from './components/projects/main';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { delay } from 'framer-motion';
+import NotFound from './404';
 gsap.registerPlugin(CustomEase, ScrollTrigger);
 export default function NeomaLandingPage() {
   const counterRef = useRef(null);
@@ -171,7 +172,8 @@ export default function NeomaLandingPage() {
                   )}
                 </div>
               } />
-              <Route path="/project/:project_id" element={<ProjectDetails />} />
+              <Route path="/projects/:project_id" element={<ProjectDetails />} />
+              <Route path="/*" element={<><NotFound /></>} />
             </Routes>
             <DownBar />
           </Router>

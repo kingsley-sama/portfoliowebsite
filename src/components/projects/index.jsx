@@ -5,39 +5,40 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import "./style.css"
 import { useGSAP } from '@gsap/react'
+import { Link } from 'react-router-dom'
 // Sample array with 20 project information entries
 const projectsData = [
   {
     number: '01',
-    name: 'ODERASBM.COM',
+    name: 'sucasa',
     title: 'E-COMMERCE PLATFORM',
     description: 'SCALABLE ONLINE SHOPPING SOLUTION\nBUILT WITH NEXTJS, TYPESCRIPT,\nSTRIPE, MONGODB.',
-    image: '/projects_images/oderasbm.png'
+    image: '/projects_images/sucasa.png'
   },
   {
     number: '02',
-    name: 'TASKMASTER.APP',
+    name: 'simpleshell',
     title: 'PROJECT MANAGEMENT',
     description: 'COLLABORATIVE TASK TRACKING TOOL\nDEVELOPED USING REACT, REDUX,\nNODE.JS, POSTGRESQL.',
-    image: '/img/project_management.png'
+    image: '/projects_images/OrionShell.png'
   },
   {
     number: '03',
-    name: 'FITTRACK.IO',
+    name: 'oderasbm',
     title: 'FITNESS TRACKER',
     description: 'PERSONALIZED WORKOUT PLANNER\nCREATED WITH REACT NATIVE,\nGRAPHQL, MONGODB.',
-    image: '/img/fitness_tracker.png'
+    image: '/projects_images/Oderasbm.png'
   },
   {
     number: '04',
-    name: 'SMARTHOUSE.TECH',
+    name: 'odomiterentals',
     title: 'HOME AUTOMATION',
     description: 'IOT-BASED SMART HOME SOLUTION\nBUILT ON RASPBERRY PI, PYTHON,\nMQTT, REACT NATIVE.',
-    image: '/img/home_automation.png'
+    image: '/projects_images/Odomiterentals.png'
   },
   {
     number: '05',
-    name: 'LEARNLANG.EDU',
+    name: 'classroom-by-delphi',
     title: 'LANGUAGE LEARNING',
     description: 'AI-POWERED LANGUAGE TUTOR\nDEVELOPED WITH PYTHON, TENSORFLOW,\nFLASK, VUE.JS.',
     image: '/img/language_learning.png'
@@ -98,8 +99,10 @@ export default function Component() {
     <>
       <div className="projects-container"  ref={containerRef}>
         {projectsData.map((project, index) => (
-          <ProjectItem key={index} project={project} index={index} />
-        ))}
+         <Link to={`/projects/${project.name}`} key={index}>
+           <ProjectItem project={project} index={index} />
+          </Link>
+          ))}
       </div>
     </>
   )
