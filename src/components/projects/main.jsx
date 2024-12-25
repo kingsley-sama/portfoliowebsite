@@ -137,11 +137,9 @@ const ProjectDetails = () => {
       </div>
       <div className="project-card_container">
         <div className="project-card">
-          <div className="project-image">
-            {project.imageUrl && (
-              <img src={project.imageUrl} alt={project.title} />
-            )}
-          </div>
+        {project.imageUrl && (
+          <div className="project-image" style={{backgroundImage :`url(${project.imageUrl})`}} />
+          )}
           <div className="project-paragraph">
             <h1>{project.title}</h1>
             <h2>User Story:</h2>
