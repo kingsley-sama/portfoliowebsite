@@ -72,7 +72,7 @@ export const projectsData = [
     ]
   },
     {
-      id: "simple-shell",
+      id: "simpleshell",
       title: "Simple Shell",
       imageUrl: "/simple-shell-image.jpg",
       userStory: "This project aims to build a custom UNIX shell interpreter from scratch, helping learners understand UNIX system operations and system call functionalities.",
@@ -170,7 +170,7 @@ export const projectsData = [
       ]
     },
     {
-      id: "osbm-website",
+      id: "oderasbm",
       title: "Odera School of Business & Management (OSBM)",
       imageUrl: "/osbm-website-image.jpg",
       userStory: "Designed and developed a professional website for OSBM, showcasing its extensive range of professional development courses and highlighting its commitment to enhancing individual and organizational capacities.",

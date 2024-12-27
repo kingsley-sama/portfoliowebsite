@@ -164,9 +164,18 @@ const ProjectDetails = () => {
               )}
             </div>
           </div>
-          <CompetitorAnalysis data={project.competitorAnalysis.competitors}/>
-          <ProblemDiscovery data={project.problemDiscovery}/>
-          <ProjectCollaborators collaborators={project.collaborators}/>
+          {project.competitorAnalysis.competitors?
+          <CompetitorAnalysis data={project.competitorAnalysis.competitors}/>:
+          null
+          }
+          {project.problemDiscovery ? <ProblemDiscovery data={project.problemDiscovery}/>:
+          null
+          }
+          {
+            project.collaborators ? <ProjectCollaborators collaborators={project.collaborators}/> :
+            null
+          }
+          
         </div>
 
       </div>
