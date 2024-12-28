@@ -82,7 +82,7 @@ export default function Component() {
     projectItems.forEach((item, index) => {
       ScrollTrigger.create({
         trigger: item,
-        start: '-=100px',
+        start: '-=50px',
         endTrigger: container,
         end:'bottom +=500px',
         pin: true,

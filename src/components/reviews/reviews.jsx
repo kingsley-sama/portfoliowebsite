@@ -24,7 +24,7 @@ const AboutMe = () => {
       scrollTrigger: {
         trigger: imageContainer,
         start: 'top center',
-        end: 'bottom 20%',
+        end: 'bottom 60%',
         scrub: true,
         toggleActions: 'play none none reverse',
       },

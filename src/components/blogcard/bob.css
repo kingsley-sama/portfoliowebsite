@@ -3,6 +3,7 @@
   width: 500px;
   display: flex;
   flex-direction: column;
+  max-width: 90%;
 }
 .article_banner {
   height: 80%;
@@ -48,4 +49,14 @@
   color: white;
   font-size: 20px;
   
+}
+
+@media only screen and (max-width: 768px) {
+  /* Styles for phones */
+  .article_parent{
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+  } 
 }

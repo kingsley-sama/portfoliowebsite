@@ -20,7 +20,7 @@ const TechStacks = () => {
 
     ScrollTrigger.create({
       trigger: container,
-      start: "top 80%",
+      start: "top 20%",
       onEnter: () => {
         // First animate the ULs
         gsap.to(techLists, {
@@ -48,7 +48,7 @@ const TechStacks = () => {
                 opacity: 1,
                 duration: 1,
                 ease: "power4.out",
-                stagger: 0.05,
+                stagger: 0.1,
                 delay: 0.2 // Delay after heading animation
               });
             });

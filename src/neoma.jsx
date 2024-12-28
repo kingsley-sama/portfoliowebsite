@@ -155,14 +155,13 @@ export default function NeomaLandingPage() {
                       <Menue_Bar />
                       <DeveloperPage />
                       <div className='body-items-container'>
+                        <Services />
                         <ProjectsPage />
                         <AboutMe />
                         <Articles />
-                        <Services />
                         <div className='article_wrapper'>
+                          <h1 className='project-item-header'>Certifications</h1>
                           <ArticleSample />
-                          
-                          
                         </div>
                         <TechStacks />
                       </div>
@@ -278,7 +277,7 @@ const ProjectsPage = () => {
 const Articles = () => {
   return (
     <div className="project-item-container">
-      <h1 className='project-item-header'>Projects</h1>
+      <h1 className='project-item-header'>Skills</h1>
       <ProductCard />
     </div>
   );
