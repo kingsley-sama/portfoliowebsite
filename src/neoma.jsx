@@ -16,7 +16,6 @@ import ProjectDetails from './components/projects/main';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { delay } from 'framer-motion';
-import NotFound from './404';
 gsap.registerPlugin(CustomEase, ScrollTrigger);
 export default function NeomaLandingPage() {
   const counterRef = useRef(null);
@@ -160,9 +159,10 @@ export default function NeomaLandingPage() {
                         <AboutMe />
                         <Articles />
                         <Services />
-                        <h1 className='project-item-header'>Certifications</h1>
                         <div className='article_wrapper'>
                           <ArticleSample />
+                          
+                          
                         </div>
                         <TechStacks />
                       </div>
@@ -173,7 +173,6 @@ export default function NeomaLandingPage() {
                 </div>
               } />
               <Route path="/projects/:project_id" element={<ProjectDetails />} />
-              <Route path="/*" element={<><NotFound /></>} />
             </Routes>
             <DownBar />
           </Router>
@@ -279,7 +278,7 @@ const ProjectsPage = () => {
 const Articles = () => {
   return (
     <div className="project-item-container">
-      <h1 className='project-item-header'>SKILLS</h1>
+      <h1 className='project-item-header'>Projects</h1>
       <ProductCard />
     </div>
   );

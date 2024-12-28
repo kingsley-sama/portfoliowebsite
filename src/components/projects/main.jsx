@@ -108,7 +108,7 @@ const ProjectDetails = () => {
     });
   };
 
-  useGSAP(() => {
+  useState(() => {
     const timer = setTimeout(() => {
       animateCounter();
       setAnimationComplete(true)
