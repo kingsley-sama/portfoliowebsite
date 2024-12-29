@@ -124,7 +124,6 @@ export default function NeomaLandingPage() {
     } else {
       setShowAnimation(false);
       setAnimationComplete(true)
-      animateCounter()
     }
   }, []);
   return (
