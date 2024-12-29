@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useRef, useEffect, useLayoutEffect, useContext } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom"
 import { Menue_Bar } from './nav/menue';
@@ -15,7 +15,8 @@ import ReactLenis from '@studio-freight/react-lenis';
 import ProjectDetails from './components/projects/main';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import { delay } from 'framer-motion';
+import ThemeContext from './context/themeContext';
+import ThemeContextProvider from './context/themeContextProvider';
 gsap.registerPlugin(CustomEase, ScrollTrigger);
 export default function NeomaLandingPage() {
   const counterRef = useRef(null);
@@ -27,6 +28,9 @@ export default function NeomaLandingPage() {
   const [animationComplete, setAnimationComplete] = useState(false);
   const [showAnimation, setShowAnimation] = useState(true);
   const [animationDone, setAnimationDone] = useState(false);
+
+  const {color, bgColor} = useContext(ThemeContext)
+
   const animateCounter = () => {
     const counterElement = counterRef.current;
     const kingsElement = kingsRef.current;
@@ -126,9 +130,11 @@ export default function NeomaLandingPage() {
       setAnimationComplete(true)
     }
   }, []);
+
   return (
     <ReactLenis root>
-      <div className="scrollable-content">
+      
+      <div className="scrollable-content" style={{background: `${bgColor}`, color:`${color}`}}>
         <div className='App'>
           <Router>
             <Routes>
@@ -153,7 +159,7 @@ export default function NeomaLandingPage() {
                     <>
                       <Menue_Bar />
                       <DeveloperPage />
-                      <div className='body-items-container'>
+                      <div className='body-items-container' style={{backgroundColor:`${bgColor}`, color:`${color  }`}}>
                         <Services />
                         <ProjectsPage />
                         <AboutMe />
@@ -176,7 +182,7 @@ export default function NeomaLandingPage() {
           </Router>
         </div>
       </div>
-    </ReactLenis>
+      </ReactLenis>
   );
 }
 const DeveloperPage = () => {
@@ -236,33 +242,78 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ProjectsPage = () => {
   const containerRef = useRef(null);
-
-  useEffect(() => {
+  const {color,bgColor, setBgColor, setColor} = useContext(ThemeContext)
+  useGSAP(() => {
     const container = containerRef.current;
-
     ScrollTrigger.create({
       trigger: container,
-      start: "top top", // When the container hits the center of the viewport
+      start: "top 5%",
+      end: "bottom -5%",
       onEnter: () => {
+        setBgColor('#d3d3d3');
+        setColor('#0c0c0c');
         gsap.to(container, {
-          backgroundColor: '#d3d3d3', // Your desired background color
+          backgroundColor: '#d3d3d3',
+          duration: 1,
+          ease: 'power2.inOut'
+        });
+      },
+      onLeave: () => {
+        setBgColor('#0c0c0c');
+        setColor('#d3d3d3');
+        gsap.to(container, {
+          backgroundColor: '#0c0c0c',
+          duration: 1,
+          ease: 'power2.inOut'
+        });
+      },
+      onEnterBack: () => {
+        setBgColor('#d3d3d3');
+        setColor('#0c0c0c');
+        gsap.to(container, {
+          backgroundColor: '#d3d3d3',
           duration: 1,
           ease: 'power2.inOut'
         });
       },
       onLeaveBack: () => {
+        setBgColor('#0c0c0c');
+        setColor('#d3d3d3');
         gsap.to(container, {
-          backgroundColor: 'initial', // Or your original background color
-          duration: 3,
+          backgroundColor: '#0c0c0c',
+          duration: 1,
           ease: 'power2.inOut'
         });
       }
     });
+    
+   /*  ScrollTrigger.create({
+      trigger: container,
+      start: "top top", // When the container hits the center of the viewport
+      onEnter: () => {
+        setBgColor('#d3d3d3')
+        setColor('#0c0c0c')
+        gsap.to(container, {
+          backgroundColor: bgColor, // Your desired background color
+          duration: 1,
+          ease: 'power2.inOut'
+        });
+      },
+      onLeaveBack: () => {
+        setBgColor('#0c0c0c')
+        setColor('#d3d3d3')
+        gsap.to(container, {
+          backgroundColor: bgColor, // Or your original background color
+          duration: 3,
+          ease: 'power2.inOut'
+        });
+      }
+    }); */
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, []);
+  },[color, setBgColor, setColor]);
 
   return (
     <div ref={containerRef} className="project-item-container">

@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef , useContext} from 'react';
 import "./reviews.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ThemeContext from '../../context/themeContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,6 +11,7 @@ const AboutMe = () => {
   const imageContainerRef = useRef(null);
   const bottomOverlayRef = useRef(null);
   const topOverlayRef = useRef(null);
+  const {color, bgColor} = useContext(ThemeContext)
 
   useEffect(() => {
     const imageContainer = imageContainerRef.current;
@@ -37,7 +39,7 @@ const AboutMe = () => {
   }, []); // Empty dependency array to run only once
 
   return (
-    <div className='about-page'>
+    <div className='about-page' >
       <div>
         <h1>About Me</h1>
         <p>

@@ -11,8 +11,8 @@
   width: 100vw;
   align-items: center;
   justify-content: center;
-  background-color:var(--bg-primary-color);
   flex-direction: column;
+  transition: background-color 0.5s ease 0.4s;
 }
 /* Initial animation container */
 .container {

@@ -1,8 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, useContext } from 'react'
 import "./menue.css";
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react'; 
+import ThemeContext from '../context/themeContext';
 const Menue_Bar = () => {
   const [navbarActive, setNavbarActive] = useState(false);
   const container = useRef();
@@ -17,7 +18,7 @@ const Menue_Bar = () => {
     { link: '/services', name: 'Services', classname: 'li', id: 4 },
     { link: '/about', name: 'About Me', classname: 'li', id: 5 },
   ];
-
+  const {color} = useContext(ThemeContext)
   useGSAP(() => {
     gsap.set(".menu-link-item-holder", { y: 75 });
     tl.current = gsap
@@ -44,7 +45,7 @@ const Menue_Bar = () => {
   }, [navbarActive]);
   return (
     <div className="menu-container" ref={container}>
-      <div className="menu-bar menu-bar-txt">
+      <div className="menu-bar menu-bar-txt" style={{color:`${color}`}}>
         <div className="menu-logo" >
           <Link className='kingsley' to={'/'}>Kingsley</Link>
         </div>

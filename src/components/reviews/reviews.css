@@ -1,6 +1,7 @@
 .about-page {
   margin-top: 100px;
-  color: var(--txt-primary-color);
+  transition: background-color 0.5s ease 0.3s;
+
     display: flex;
     flex-direction: row;
     align-items: center;
