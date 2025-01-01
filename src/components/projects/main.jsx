@@ -4,10 +4,10 @@ import "../../App.css"
 import gsap from 'gsap';
 import { projectsData } from './details';
 import CustomEase from 'gsap/CustomEase';
-import ReactLenis from '@studio-freight/react-lenis';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
 import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
+import { createAvatar } from '@dicebear/core';
+import { thumbs } from '@dicebear/collection';
 gsap.registerPlugin(CustomEase, ScrollTrigger);
 
 const ProjectDetails = () => {
@@ -287,8 +287,64 @@ function ProblemDiscovery({data}) {
     </div>
   );
 }
+const styles = {
+  container: {
+    padding: '24px'
+  },
+  content: {
+    maxWidth: '1200px',
+    margin: '0 auto'
+  },
+  title: {
+    fontSize: '24px',
+    fontWeight: 'bold',
+    marginBottom: '16px'
+  },
+  divider: {
+    height: '1px',
+    backgroundColor: '#e5e5e5',
+    marginBottom: '24px'
+  },
+  grid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
+    gap: '24px'
+  },
+  card: {
+    backgroundColor: 'white',
+    borderRadius: '8px',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+    padding: '16px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  avatarContainer: {
+    width: '96px',
+    height: '96px',
+    marginBottom: '16px'
+  },
+  name: {
+    fontSize: '18px',
+    fontWeight: '600',
+    marginBottom: '8px'
+  },
+  role: {
+    color: '#666',
+    margin: 0
+  }
+};
+
 // ProjectCollaborators.jsx
+
 function ProjectCollaborators({collaborators}){
+  const getAvatarSvg = (name) => {
+    const avatar = createAvatar(thumbs, {
+      seed: name
+    });
+    return avatar.toString();
+  };
+
   return (
     <div className="collaborators-container">
       <div className="collaborators-content">
@@ -298,13 +354,11 @@ function ProjectCollaborators({collaborators}){
         <div className="collaborators-grid">
           {collaborators.map((collaborator) => (
             <div key={collaborator.name} className="collaborator-card">
-              <div className="collaborator-image-container">
-                <img
-                  src={collaborator.image}
-                  alt={collaborator.name}
-                  layout="fill"
-                  objectFit="cover"
-                  className="collaborator-image"
+
+                  <div style={styles.avatarContainer}>
+                <div
+                  dangerouslySetInnerHTML={{ __html: getAvatarSvg(collaborator.name) }}
+                  style={{ width: '100%', height: '100%' }}
                 />
               </div>
               <h3 className="collaborator-name">{collaborator.name}</h3>

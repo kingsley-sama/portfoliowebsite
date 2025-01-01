@@ -17,6 +17,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import ThemeContext from './context/themeContext';
 import ThemeContextProvider from './context/themeContextProvider';
+import NotFound from './404';
 gsap.registerPlugin(CustomEase, ScrollTrigger);
 export default function NeomaLandingPage() {
   const counterRef = useRef(null);
@@ -28,7 +29,6 @@ export default function NeomaLandingPage() {
   const [animationComplete, setAnimationComplete] = useState(false);
   const [showAnimation, setShowAnimation] = useState(true);
   const [animationDone, setAnimationDone] = useState(false);
-
   const {color, bgColor} = useContext(ThemeContext)
 
   const animateCounter = () => {
@@ -123,13 +123,12 @@ export default function NeomaLandingPage() {
     const hasPlayed = sessionStorage.getItem('animationPlayed');
     if (hasPlayed !== 'true') {
       setShowAnimation(true );
-      
       animateCounter()
     } else {
       setShowAnimation(false);
       setAnimationComplete(true)
     }
-  }, []);
+  });
 
   return (
     <ReactLenis root>
@@ -176,6 +175,8 @@ export default function NeomaLandingPage() {
                   )}
                 </div>
               } />
+              //404 page
+              <Route path="*" element={<NotFound />} />
               <Route path="/projects/:project_id" element={<ProjectDetails />} />
             </Routes>
             <DownBar />
