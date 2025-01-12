@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  transition: background-color 0.5s ease 0.4s;
+  transition: background-color 0.5s ease 0.5s;
 }
 /* Initial animation container */
 .container {
@@ -29,7 +29,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
 }
 /* Main content container */
 .App {
@@ -109,7 +109,6 @@
 
 /* Developer page */
 .developer-page {
-  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -286,7 +285,7 @@ p {
 .image-section {
   height: 30vh;
   background-image: url('/projects_images/linkedin_banner.png');
-  border-radius: 10px;
+  border-radius: 20px;
   background-size: cover;
   max-height: 150px;
   min-height: 150px;
@@ -302,7 +301,7 @@ p {
   width: 100%;
   background-color: rgba(0,0,0, 0.4);
   position: relative;
-  border-radius: 30px;
+  border-radius: 20px;
 }
 
 #hover_button {
@@ -337,7 +336,7 @@ p {
   display: flex;
   align-items: center;
   width: 100%;
-  margin-top: 89px;
+  margin-top: 50px;
 }
 .project-item-header{
   width: auto;
@@ -388,4 +387,10 @@ p {
   max-height: 300px;
   width: 90%;
 }
+}
+@media only screen and (max-width: 480px) {
+  .developer-page{
+    height: 80vh;
+    max-height: 80vh;
+  }
 }
