@@ -1,6 +1,6 @@
 /* Main Heading */
 .kingsley {
-  font-size: clamp(2rem, 2vw, 3rem);
+  font-size: 2.5rem;
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 3px;
@@ -12,7 +12,6 @@
   top: 0;
   left: 0;
   display: flex;
-  
   width: 100vw;
   align-items: center;
   justify-content: space-between;
@@ -123,6 +122,6 @@
   }
 
   .menu-link-item-holder a {
-    font-size: 60px;
+    font-size: 80px;
   }
 }
