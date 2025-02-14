@@ -8,7 +8,6 @@
   cursor: pointer;
 }
 .menu-bar, .menu-overlay{
-  position: fixed;
   top: 0;
   left: 0;
   display: flex;
@@ -20,16 +19,17 @@
 .menu-close{
   cursor: pointer;
 }
-.menu-bar-txt{
+.menu-bar-txt, .menu-close{
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 10px;
   padding-left: 0px;
-  padding-right: 20px;
-  /* background-color: var(--bg-primary-color); */
-  justify-content: space-between;
+  position: absolute;
+  padding-top: 2rem;
+  padding-right: 4rem;
+  font-size: 4rem;
+  justify-content: flex-end;
 }
 .menu-overlay {
   position: fixed;
@@ -76,11 +76,7 @@
   align-items: flex-end;
 }
 
-.menu-close-icon p {
-  font-size: 50px;
-  -webkit-text-stroke: 3px var(--bg-primary-color);
-  line-height: 70%;
-}
+
 .menu-close-icon {
   flex: 2;
   width: 40px;

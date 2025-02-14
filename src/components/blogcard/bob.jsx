@@ -25,8 +25,8 @@ const ArticleSample =()=>{
             </div>
           </div>
           <div className='article_text'>
-            <p>Name: {certificate.name}</p>
-            <p>Date: {certificate.date}</p>
+            <p>{certificate.name}</p>
+            <p>{certificate.date}</p>
           </div>
         </div>
       ))

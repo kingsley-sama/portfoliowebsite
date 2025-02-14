@@ -12,13 +12,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;  
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 a{
   text-decoration: none;
   color: inherit;
 }
 ::-webkit-scrollbar {
-    width: 5px; /* Adjust this value to change the width */
+    width: 5px; 
 }
 
 body {

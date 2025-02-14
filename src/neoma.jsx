@@ -15,7 +15,7 @@ import ReactLenis from '@studio-freight/react-lenis';
 import ProjectDetails from './components/projects/main';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import { delay } from 'framer-motion';
+import NotFound from './404';
 gsap.registerPlugin(CustomEase, ScrollTrigger);
 export default function NeomaLandingPage() {
   const counterRef = useRef(null);
@@ -173,6 +173,7 @@ export default function NeomaLandingPage() {
                 </div>
               } />
               <Route path="/projects/:project_id" element={<ProjectDetails />} />
+              <Route path="/*" element={<NotFound />} />
             </Routes>
             <DownBar />
           </Router>
@@ -219,7 +220,7 @@ const DeveloperPage = () => {
     <div className="developer-page">
       <div className="content" ref={contentRef}>
         <h1 id="web-mobile-h1" ref={titleRef}>
-          <span className="left-align">Web & M<div className='circle_img'></div>bile</span>
+          <span className="left-align">Web & Mobile</span>
           <span className="right-align">DEVELOPER</span>
         </h1>
         <p ref={subtitleRef}>Full Stack Developer With 3<br />plus years of experience</p>

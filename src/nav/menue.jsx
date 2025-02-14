@@ -45,18 +45,18 @@ const Menue_Bar = () => {
   return (
     <div className="menu-container" ref={container}>
       <div className="menu-bar menu-bar-txt">
-        <div className="menu-logo" >
+        {/* <div className="menu-logo" >
           <Link className='kingsley' to={'/'}>Kingsley</Link>
-        </div>
+        </div> */}
         <div className="menu-open" onClick={toggleNavbar}>
           <p>Menu</p>
         </div>
       </div>
       <div className="menu-overlay">
         <div className="menu-overlay-bar">
-          <div className='menu-logo'>
+          {/* <div className='menu-logo'>
             <Link className='kingsley'>Kinsgley</Link>
-          </div>
+          </div> */}
           <div className='menu-close' onClick={toggleNavbar}>
             <p>close</p>
           </div>

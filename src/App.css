@@ -113,6 +113,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 100px;
 }
 
 
@@ -247,7 +248,6 @@ img {
   padding: 10px;
   height: auto;
   white-space: pre;
-  transform-perspective: 1200;
   display: flex;
   flex-direction: column;
   font-weight: 500;
@@ -257,18 +257,6 @@ img {
   font-size: 50px;
   letter-spacing: -0.04em;
   line-height: 1.2;
-}
-.circle_img {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  margin: 0 4px;
-  border-radius: 50%;
-  background-image: url('/img/Fantasy-Lake2.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  vertical-align: middle;
 }
 
 #web-mobile-h1 .left-align {
@@ -286,7 +274,6 @@ p {
 .image-section {
   height: 30vh;
   background-image: url('/projects_images/linkedin_banner.png');
-  border-radius: 10px;
   background-size: cover;
   max-height: 150px;
   min-height: 150px;
@@ -294,7 +281,7 @@ p {
   width: 95%;
   display: flex;
   justify-content: center;
-  align-itemes: center;
+  align-items: center;
   position: relative;
 }
 .image-overlay {
@@ -302,7 +289,6 @@ p {
   width: 100%;
   background-color: rgba(0,0,0, 0.4);
   position: relative;
-  border-radius: 30px;
 }
 
 #hover_button {
@@ -354,10 +340,7 @@ p {
   line-height: 1.4;
 }
 @media (min-width: 766px){
-  .circle_img{
-	height: 70px;
-	width: 70px;
-  }
+
   .developer-page{
 	height: 100vh;
     display: flex;
