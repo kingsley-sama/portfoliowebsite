@@ -8,6 +8,8 @@ import ReactLenis from '@studio-freight/react-lenis';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
+import { createAvatar } from '@dicebear/core';
+import { identicon } from '@dicebear/collection';
 gsap.registerPlugin(CustomEase, ScrollTrigger);
 
 const ProjectDetails = () => {
@@ -25,7 +27,7 @@ const ProjectDetails = () => {
     const kingsElement = kingsRef.current;
     const workElement = workRef.current;
     let currentValue = 0;
-    const updateInterval = 30; // Faster updates for smoother animation
+    const updateInterval = 30;
     const maxDuration = 500;
     const endValue = 100;
     const startTime = Date.now();
@@ -117,7 +119,6 @@ const ProjectDetails = () => {
     return () => clearTimeout(timer);
   }, []);
   const project = projectsData.find(p => p.id === project_id);
-  console.log(project.title)
   const handleBack = () => {
     navigate(-1);
   };
@@ -153,7 +154,7 @@ const ProjectDetails = () => {
               <button className="back-button" onClick={handleBack}>
                 Back
               </button>
-              {project.liveUrl && (
+              {project.Url ? (
                 <a
                   href={project.liveUrl}
                   target="_blank"
@@ -161,11 +162,17 @@ const ProjectDetails = () => {
                 >
                   <button className="view-button">View Website Live</button>
                 </a>
-              )}
+              ):( <a
+                href={project.GitUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="view-button">View Github Repo</button>
+              </a>)}
             </div>
           </div>
-          {project.competitorAnalysis.competitors?
-          <CompetitorAnalysis data={project.competitorAnalysis.competitors}/>:
+          {project.competitorAnalysis?
+          <CompetitorAnalysis data={project.competitorAnalysis}/>:
           null
           }
           {project.problemDiscovery ? <ProblemDiscovery data={project.problemDiscovery}/>:
@@ -296,23 +303,29 @@ function ProjectCollaborators({collaborators}){
         <div className="collaborators-divider"></div>
 
         <div className="collaborators-grid">
-          {collaborators.map((collaborator) => (
-            <div key={collaborator.name} className="collaborator-card">
-              <div className="collaborator-image-container">
-                <img
-                  src={collaborator.image}
-                  alt={collaborator.name}
-                  layout="fill"
-                  objectFit="cover"
-                  className="collaborator-image"
-                />
+          {collaborators.map((collaborator) => {
+            // Generate the avatar using DiceBear
+            const avatar = createAvatar(identicon, {
+              seed: collaborator.name,
+            });
+
+            return (
+              <div key={collaborator.name} className="collaborator-card">
+                <div className="collaborator-image-container">
+               
+                  <div
+                    dangerouslySetInnerHTML={{ __html: avatar }}
+                    className="collaborator-image"
+                  />
+                </div>
+                <h3 className="collaborator-name">{collaborator.name}</h3>
+                <p className="collaborator-role">{collaborator.role}</p>
               </div>
-              <h3 className="collaborator-name">{collaborator.name}</h3>
-              <p className="collaborator-role">{collaborator.role}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>
   );
+   
 }

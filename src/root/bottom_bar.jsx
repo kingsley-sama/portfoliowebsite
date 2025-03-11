@@ -13,11 +13,11 @@ const DownBar = () => {
   };
   // Links data
   const links = [
-    { name: 'GitHub', href: '#' },
-    { name: 'TheRoom', href: '#' },
-    { name: 'LinkedIn', href: '#' },
-    { name: 'X', href: '#' },
-    { name: 'Email', href: '#' }
+    { name: 'GitHub', href: 'https://github.com/kingsley-sama' },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/kingsley-okpo-13825b318' },
+    { name: 'X', href: 'https://x.com/TechWithKing' },
+    { name: 'Email', href: 'mailto:kngsley2018@gmail.com' },
+    { name: 'TheRoom', href: '#' }
   ];
   return (
     <div className='main_footer'>

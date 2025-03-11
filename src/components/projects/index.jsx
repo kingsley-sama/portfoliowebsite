@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 const projectsData = [
   {
     number: '01',
-    name: 'sucasa',
+    name: 'kizush constructions',
     title: 'E-COMMERCE PLATFORM',
     description: 'SCALABLE ONLINE SHOPPING SOLUTION\nBUILT WITH NEXTJS, TYPESCRIPT,\nSTRIPE, MONGODB.',
     image: '/projects_images/sucasa.png'
@@ -25,22 +25,22 @@ const projectsData = [
   {
     number: '03',
     name: 'oderasbm',
-    title: 'FITNESS TRACKER',
-    description: 'PERSONALIZED WORKOUT PLANNER\nCREATED WITH REACT NATIVE,\nGRAPHQL, MONGODB.',
+    title: 'Education and Consulting',
+    description: 'EDUCATION AND CONSULTING PLATFORM\nBUILT WITH REACT, NODE.JS,\nMONGODB, STRIPE',
     image: '/projects_images/Oderasbm.png'
   },
   {
     number: '04',
     name: 'odomiterentals',
     title: 'HOME AUTOMATION',
-    description: 'IOT-BASED SMART HOME SOLUTION\nBUILT ON RASPBERRY PI, PYTHON,\nMQTT, REACT NATIVE.',
+    description: 'A rental Company based in New Jersey\nBUILT WITH REACT, NODE.JS,\nMONGODB, STRIPE',
     image: '/projects_images/Odomiterentals.png'
   },
   {
     number: '05',
     name: 'classroom-by-delphi',
     title: 'LANGUAGE LEARNING',
-    description: 'AI-POWERED LANGUAGE TUTOR\nDEVELOPED WITH PYTHON, TENSORFLOW,\nFLASK, VUE.JS.',
+    description: 'AI-POWERED LANGUAGE TUTOR\nDEVELOPED WITH Python, fastAPI,\nREACT, Mysql.',
     image: '/img/language_learning.png'
   },
 

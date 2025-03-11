@@ -70,8 +70,8 @@ const Services = () => {
         <h3>___ our growth journey </h3>
         <h1>User Centric Software Development</h1>
         <p>
-          Hi do you want to know what I can do for you? Take a few moments
-          to see the core technical services I provide and how I go about them.
+          I strongly believe in human centered designs and I believe close interaction with the end user 
+          is key to developing a successful product. Because we can see key painpoints and areas of improvement.
         </p>
       </div>
       <div className='service-img'>
@@ -99,7 +99,7 @@ const Services = () => {
               <div ref={videoRef} className="video-player-wrapper">
                 <iframe 
                   className="video-iframe"
-                  src="https://www.youtube.com/embed/OHf5bapbrcI?si=fbpD6aLJcs1Ou3KP" 
+                  src="https://www.youtube.com/embed/KkUor_NTuDA" 
                   title="YouTube video player" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                   referrerPolicy="strict-origin-when-cross-origin" 
