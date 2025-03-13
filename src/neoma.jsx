@@ -25,7 +25,7 @@ export default function NeomaLandingPage() {
   const workRef = useRef(null);
   const containerRef = useRef(null);
   const [animationComplete, setAnimationComplete] = useState(false);
-  const [showAnimation, setShowAnimation] = useState(true);
+  const [showAnimation, setShowAnimation] = useState(sessionStorage.setItem('animationPlayed', 'true') ? false: true);
   const [animationDone, setAnimationDone] = useState(false);
   const animateCounter = () => {
     const counterElement = counterRef.current;
@@ -119,7 +119,7 @@ export default function NeomaLandingPage() {
     const hasPlayed = sessionStorage.getItem('animationPlayed');
     if (hasPlayed !== 'true') {
       setShowAnimation(true );
-      
+      console.log(showAnimation)
       animateCounter()
     } else {
       setShowAnimation(false);
