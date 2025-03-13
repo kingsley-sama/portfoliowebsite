@@ -25,7 +25,14 @@ export default function NeomaLandingPage() {
   const workRef = useRef(null);
   const containerRef = useRef(null);
   const [animationComplete, setAnimationComplete] = useState(false);
-  const [showAnimation, setShowAnimation] = useState(sessionStorage.setItem('animationPlayed', 'true') ? false: true);
+
+  const [showAnimation, setShowAnimation] = useState(() => {
+    try {
+      return sessionStorage.getItem('animationPlayed') === 'true' ? false : true;
+    } catch (e) {
+            return true;
+    }
+  });
   const [animationDone, setAnimationDone] = useState(false);
   const animateCounter = () => {
     const counterElement = counterRef.current;
@@ -76,6 +83,7 @@ export default function NeomaLandingPage() {
     };
 
     requestAnimationFrame(updateCounter);
+    
   };
   const revealLandingPage = () => {
     CustomEase.create(
@@ -117,6 +125,7 @@ export default function NeomaLandingPage() {
   };
   useGSAP(() => {
     const hasPlayed = sessionStorage.getItem('animationPlayed');
+    console.log(sessionStorage.getItem('animationPlayed'))
     if (hasPlayed !== 'true') {
       setShowAnimation(true );
       console.log(showAnimation)
